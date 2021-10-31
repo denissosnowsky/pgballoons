@@ -1,0 +1,3 @@
+mutation changeManyPricesToBouquets($oldPrice: Int!, $newPrice: Int!) {
+  changeManyPricesToBouquets(oldPrice: $oldPrice, newPrice: $newPrice)
+}

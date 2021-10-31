@@ -1,0 +1,8 @@
+query Assortment{
+  assortment {
+    id
+    name
+    price
+    fixed
+  }
+}

@@ -1,0 +1,8 @@
+query AllBalloons($price: Int, $categoryId: ID, $colorId: ID, $code: Int) {
+  allBalloons(
+    price: $price
+    categoryId: $categoryId
+    colorId: $colorId
+    code: $code
+  )
+}

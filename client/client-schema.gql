@@ -1,0 +1,12 @@
+type BasketType {
+    isInBasket: Boolean
+    basketQuantity: Int
+}
+
+extend type Balloon {
+    basketStatus: BasketType
+}
+
+extend type Bouquet {
+    basketStatus: BasketType
+}

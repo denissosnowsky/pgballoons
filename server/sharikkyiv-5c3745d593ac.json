@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sharikkyiv",
+  "private_key_id": "5c3745d593acd71d7c1e8411fcba93c384340939",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDud7WF/suXIp42\nUbjg/EgGrKSYsjdHHF+r8WB5srqCdD2Oh5mEPI/T52BCVJC0yBbT9/51d9yz+Rrn\nawEw+VkjSxUQLgea7ObF/uVldDpruMggOnS7Key6xgHIi+fzeCh8zOxpJIQa1YVp\nOMBEf11J3IBMuyrgpSku8nFX6+zpmqbryJ0F3xeU/0MPm5Z6eFVLnckZJCdrohdD\n5kTNbYBGWTDu90b3cCbxoZ6mI6naquXQOtPUAeJckxIWPt+xSqHKn/XfXdBzRFHR\nwnYbVOecrX8WAbeEUWewfTrBSkdQU1imAhncCsri2uLPrTrdbf5CwdX9/2URtPZM\nzF9Mr9VlAgMBAAECggEABIzvDAlXRzrXSNmsYBa2vr6pCwTmyyOYEi1L/Jm6UQAs\nDVegruy2h4INzMlvIK2eY3/pY8J1/E7PnATnULdUlrjTERKS/WDYUoTq41G7Et0q\nBhUESNU9YDikRhIG/hb+TTHEsFW/2gDWR+WLJB0Uez++Iji1uI20ruGpFtcFfiIQ\nItsXAykvvmGBhYiQ5ar9dmz7cBYyDj3moEotGhFL96feLv713QuJ3sC7x3A2q/6k\nG48H/ag6ZUSK/173htu3o0DfaEABLWVZ3yWUs2LGsYrGop4uKn3o8VIWLtRMwtr9\nHGK4UmCbeaxqoImvhxc0OQKfQlI93pgMCmoEygRVIQKBgQD5JVFRWP4GQtCJgnEk\np9OW44V3hKZGyZ/rbCKyM4vTPTZmuGrGfUnNYacnpGxOUNqA1LLARetOR0T2jEYu\nzFCgPRexl4yH8MV7wotPG3twyxDmcRxgRPC9rSF/Vrpq6qN73MnFXgpt2IcDyFTL\nV9LyAmpcv1Xv/7PpkKKf3ADNLQKBgQD1By/2rDlvvHQZBClVPVDz/oqm7TPefw3o\nQJIeUlFvmA0qU/SZ2+o50J9YeJFNKqVDaViYjVjulSylXJ3n/rgSjJFsyU81zMah\nt7cUyatuUeeQDERd3XlDH67cWXkPIaeEe6G6vcKS3EA9fMe9MMqOcFCKXpMljo/N\nOVi0qmJ8GQKBgQDVeqdZ17IZ9Ugwe0etS+xeXueuyEedYggYNhjorohB4TJrA9vh\n5drGE8Whjx6KYHdJancbjw2XjjPGOd2tHb57/rz9m8h7dtAQQlsR1o+Hz0fU3Nie\nmJPbQqzwKoUjNZgNetqctf6jrqPJlu8pKUCDw5QVkpD1SxmCqT7fUSiSpQKBgFFw\nIBrmRvjCM/wUjABOrtdJpJ+yeujaZa7ptyboyTRD3yxQVx3EH+czVaK7/98b622q\nV83sPMCfSAV18O2olVlk6vizN+ZztxkMzIbWOGokQsh3q0lfUOxkXWPTQQ8salb4\nGFrOsxrIpXlKPcC9tLT+02YJ5PI4ncbh5n+1maIRAoGBAOGVxKUj2EkF/p7GSZjG\nASrHE+7YyMDZtLCQmggsAI5MG+X1bKU8uarSsz9gLtRg1xCO7LOzGIiV6q4HjAz6\neOzOscQnjsFtJWQmdXmdaNhaWPsiU06d89Qlm+S8xlHHbqyD98XTFk/nRsvpSYbS\n3wcj7XIGWyCMM0KXaoI1MSPS\n-----END PRIVATE KEY-----\n",
+  "client_email": "sharikkyiv@sharikkyiv.iam.gserviceaccount.com",
+  "client_id": "105578872946082888018",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sharikkyiv%40sharikkyiv.iam.gserviceaccount.com"
+}

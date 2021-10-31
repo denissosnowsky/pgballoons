@@ -1,0 +1,7 @@
+query Colors {
+  colors {
+    id
+    name
+    cssName
+  }
+}

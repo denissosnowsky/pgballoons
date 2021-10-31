@@ -1,0 +1,3 @@
+mutation SendOrder($order: JSON!){
+  sendOrder(order: $order)
+}

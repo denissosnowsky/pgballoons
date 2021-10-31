@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.code {
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.subTitle {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 20px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0px;
+  color: #0d6efd;
+}
+
+.img {
+  height: 300px;
+  border-radius: 15px 15px 0px 0px;
+  /* cursor: pointer; */
+}
+
+.button {
+  font-weight: 500;
+  font-size: 17px;
+}
+.button:active, .button:focus {
+  outline: none!important;
+}
+.button::-moz-focus-inner {
+  border: 0!important;
+}
+
+.link{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.link:hover{
+  transform: scale(1.00) !important;
+}
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 992px){
+  .button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 576px){
+
+}

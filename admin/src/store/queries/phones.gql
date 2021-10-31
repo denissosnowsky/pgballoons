@@ -1,0 +1,6 @@
+query Phones {
+  phones {
+    id
+    number
+  }
+}

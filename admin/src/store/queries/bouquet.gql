@@ -1,0 +1,12 @@
+query Bouquet($id: String!) {
+  bouquet(id: $id) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    personType
+  }
+}

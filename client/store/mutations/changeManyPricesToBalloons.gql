@@ -1,0 +1,3 @@
+mutation changeManyPricesToBalloons($oldPrice: Int!, $newPrice: Int!) {
+  changeManyPricesToBalloons(oldPrice: $oldPrice, newPrice: $newPrice)
+}

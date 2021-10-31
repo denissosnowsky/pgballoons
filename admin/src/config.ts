@@ -1,0 +1,3 @@
+export const password = '13081123';
+export const graphqlUrl = 'http://localhost:5000/graphql';
+export const googleUrl = "https://storage.googleapis.com/sharikkyiv/";

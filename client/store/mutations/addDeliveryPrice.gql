@@ -1,0 +1,6 @@
+mutation AddDeliveryPrice($price: String!) {
+  addDeliveryPrice(price: $price) {
+    id
+    price
+  }
+}

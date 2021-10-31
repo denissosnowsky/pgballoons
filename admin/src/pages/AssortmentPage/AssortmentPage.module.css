@@ -1,0 +1,19 @@
+.li {
+  display: flex !important;
+  background-color: transparent !important;
+  flex-direction: column;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  width: 100% !important;
+}
+
+.listWrapper{
+    display: flex;
+    justify-content: space-between !important;
+    font-weight: 400;
+    font-size: 27px;
+}
+
+.ul {
+  width: 100% !important;
+}

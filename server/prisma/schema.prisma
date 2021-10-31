@@ -1,0 +1,82 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Bouquet {
+  id          String        @id @default(uuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  name        String
+  subname     String
+  price       Int
+  description String
+  code        Int        @unique
+  image       String
+  personType  PesronType
+}
+
+model Balloon {
+  id          String        @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  subname     String
+  price       Int
+  description String
+  code        Int      @unique
+  image       String
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  color       Color    @relation(fields: [colorId], references: [id])
+  colorId     Int
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  balloons Balloon[]
+}
+
+model Color {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  cssName  String    @unique
+  balloons Balloon[]
+}
+
+model Assortment {
+  id    Int     @id @default(autoincrement())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  name  String  @unique
+  price String
+  fixed Boolean
+}
+
+model Phone {
+  id     Int    @id @default(autoincrement())
+  number String
+}
+
+model SocialNet {
+  id    Int    @id @default(autoincrement())
+  name  String
+  link  String
+  image String
+}
+
+model DeliveryPrice {
+  id    Int    @id @default(autoincrement())
+  price String
+}
+
+enum PesronType {
+  MAN
+  WOMAN
+  CHILD
+}

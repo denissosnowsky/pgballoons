@@ -1,0 +1,8 @@
+query SocialNets {
+  socialNets {
+    id
+    name
+    link
+    image
+  }
+}

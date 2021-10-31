@@ -1,0 +1,6 @@
+query DeliveryPrice {
+  deliveryPrice {
+    id
+    price
+  }
+}

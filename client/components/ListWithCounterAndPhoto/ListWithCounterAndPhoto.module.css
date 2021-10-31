@@ -1,0 +1,85 @@
+.li {
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  height: 50px;
+  line-height: 50px;
+  height: fit-content;
+  padding: 0px;
+  position: relative;
+  line-height: 30px;
+}
+
+.lastCol {
+  text-align: end;
+}
+
+.sumRow {
+  font-size: 25px;
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.group {
+  padding: 10px;
+}
+
+.upRow {
+  align-items: center;
+  font-size: 25px;
+  padding-top: 5px;
+}
+
+.image,
+.imageWrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+}
+
+.title {
+  color: #0d6efd;
+}
+
+.bin {
+  color: #dc3545;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.bin:hover {
+  color: red;
+}
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 992px){
+
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 576px){
+  .li{
+    font-size: 15px;
+  }
+  .input {
+    font-size: 15px;
+  }
+  .lastCol{
+    font-size: 15px;
+  }
+  .title{
+    font-size: 15px;
+  }
+  .image,
+.imageWrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+}
+}

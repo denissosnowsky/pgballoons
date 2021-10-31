@@ -1,0 +1,16 @@
+.wrapper {
+  z-index: 2200;
+}
+
+.preload {
+  height: 200px;
+  width: 200px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.preload img {
+  object-fit: contain;
+  height: 200px;
+  width: 200px;
+  border-radius: 15px 15px 15px 15px;
+}

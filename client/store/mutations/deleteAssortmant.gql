@@ -1,0 +1,8 @@
+mutation DeleteAssortmant($id: ID!) {
+  deleteAssortmant(id: $id) {
+    id
+    name
+    price
+    fixed
+  }
+}

@@ -1,0 +1,6 @@
+mutation DeletePhone($id: ID!) {
+  deletePhone(id: $id) {
+    id
+    number
+  }
+}

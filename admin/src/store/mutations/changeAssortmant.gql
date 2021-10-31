@@ -1,0 +1,8 @@
+mutation ChangeAssortmant($id: ID!, $name: String, $price: String, $fixed: Boolean) {
+  changeAssortmant(id: $id, name: $name, price: $price, fixed: $fixed) {
+    id
+    name
+    price
+    fixed
+  }
+}

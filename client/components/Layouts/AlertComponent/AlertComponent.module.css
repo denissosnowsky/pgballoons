@@ -1,0 +1,20 @@
+.alertError,
+.alertSuccess {
+  position: absolute;
+  top: 20px;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.alertError {
+  background-color: rgba(245, 168, 182, 0.9) !important;
+}
+
+.alertSuccess {
+  background-color: rgba(105, 248, 184, 0.9) !important;
+}

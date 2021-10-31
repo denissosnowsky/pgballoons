@@ -1,0 +1,25 @@
+.layout{
+    background-color: rgba(255,255,255, 0.8);
+    padding: 15px;
+    margin-bottom: 0px;
+    padding-bottom: 70px;
+    min-height: 100%;
+    position: relative;
+}
+
+.footer{
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px 0px 15px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer img{
+    object-fit: fill;
+    height: 70px;
+    width: 70px;
+}

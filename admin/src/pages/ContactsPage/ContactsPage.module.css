@@ -1,0 +1,38 @@
+.li {
+    display: flex !important;
+    background-color: transparent !important;
+    flex-direction: column;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    width: 100% !important;
+  }
+  
+  .li2{
+    background-color: #eee !important;
+    border: 1px solid red;
+    border-radius: 15px 15px 15px 15px;
+  }
+  
+  .listWrapper {
+    display: flex;
+    justify-content: space-between !important;
+    font-weight: 400;
+    font-size: 27px;
+  }
+  
+  .listWrapper2{
+    display: flex;
+    justify-content: space-between !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+  }
+  
+  .ul {
+    width: 100% !important;
+  }
+  
+  input, textarea, select {
+    outline: none;
+    border: none;
+    font-size: 17px;
+  }

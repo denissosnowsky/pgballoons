@@ -1,0 +1,9 @@
+.errorMsg{
+    height: 50vh;
+    text-align: center;
+    line-height: 50vh;
+    width: 100%;
+    font-size: 40px;
+    color: #dc3545;
+    font-weight: 400;
+}

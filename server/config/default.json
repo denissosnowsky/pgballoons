@@ -1,0 +1,9 @@
+{
+    "port": "5000",
+    "googleUrl": "https://storage.googleapis.com/sharikkyiv/",
+    "telegramBotToken": "2069695860:AAENOH4BdsdQZL_pzBhFCOIO6788AiRfm_w",
+    "telegramChatId": "-770788454",
+    "clientUrlhttp": "http://localhost:3000",
+    "clientUrlhttps": "https://localhost:3000",
+    "adminUrl": "http://localhost:3001"
+}

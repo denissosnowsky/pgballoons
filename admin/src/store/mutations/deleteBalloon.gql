@@ -1,0 +1,19 @@
+mutation DeleteBalloon($id: String!) {
+  deleteBalloon(id: $id) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    category {
+      id
+      name
+    }
+    color {
+      id
+      name
+    }
+  }
+}

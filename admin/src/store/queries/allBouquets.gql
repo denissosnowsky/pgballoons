@@ -1,0 +1,3 @@
+query AllBouquets($price: Int, $personType: Person, $code: Int) {
+  allBouquets(price: $price, personType: $personType, code: $code)
+}

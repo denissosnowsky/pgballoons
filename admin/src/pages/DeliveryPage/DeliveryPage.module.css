@@ -1,0 +1,23 @@
+.wrapper{
+    height: 150px;
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    align-items: center;
+}
+
+.price{
+ color: #dc3545;
+}
+
+.btn{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+mutation DeleteSocialNet($id: ID!) {
+  deleteSocialNet(id: $id) {
+    id
+    name
+    link
+    image
+  }
+}

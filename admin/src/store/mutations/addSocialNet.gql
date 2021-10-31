@@ -1,0 +1,8 @@
+mutation AddSocialNet($name: String!, $link: String!, $image: String!) {
+  addSocialNet(name: $name, link: $link, image: $image) {
+    id
+    name
+    link
+    image
+  }
+}

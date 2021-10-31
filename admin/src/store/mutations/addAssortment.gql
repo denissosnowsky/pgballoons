@@ -1,0 +1,8 @@
+mutation AddAssortment($name: String!, $price: String!, $fixed: Boolean!) {
+  addAssortment(name: $name, price: $price, fixed: $fixed) {
+    id
+    name
+    price
+    fixed
+  }
+}

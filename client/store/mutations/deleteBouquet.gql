@@ -1,0 +1,12 @@
+mutation DeleteBouquet($id: String!){
+  deleteBouquet(id: $id) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    personType
+  }
+}

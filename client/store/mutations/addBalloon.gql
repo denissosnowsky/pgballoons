@@ -1,0 +1,37 @@
+mutation AddBalloon(
+  $name: String!
+  $subname: String!
+  $price: Int!
+  $description: String!
+  $code: Int!
+  $image: Upload!
+  $categoryId: ID!
+  $colorId: ID!
+) {
+  addBalloon(
+    name: $name
+    subname: $subname
+    price: $price
+    description: $description
+    code: $code
+    image: $image
+    categoryId: $categoryId
+    colorId: $colorId
+  ) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    category {
+      id
+      name
+    }
+    color {
+      id
+      name
+    }
+  }
+}

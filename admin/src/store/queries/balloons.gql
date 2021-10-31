@@ -1,0 +1,33 @@
+query Balloons(
+  $skip: Int!
+  $take: Int!
+  $price: Int
+  $categoryId: ID
+  $colorId: ID
+  $code: Int
+) {
+  balloons(
+    skip: $skip
+    take: $take
+    price: $price
+    categoryId: $categoryId
+    colorId: $colorId
+    code: $code
+  ) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    category {
+      id
+      name
+    }
+    color {
+      id
+      name
+    }
+  }
+}

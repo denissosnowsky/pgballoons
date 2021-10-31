@@ -1,0 +1,7 @@
+mutation AddColor($name: String!, $cssName: String!) {
+  addColor(name: $name, cssName: $cssName) {
+    id
+    name
+    cssName
+  }
+}

@@ -1,0 +1,25 @@
+.li {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 1200px){
+
+}
+
+@media (max-width: 992px){
+
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 576px){
+  .li{
+    font-size: 15px;
+  }
+}

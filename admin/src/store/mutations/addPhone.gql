@@ -1,0 +1,6 @@
+mutation AddPhone($number: String!) {
+  addPhone(number: $number) {
+    id
+    number
+  }
+}

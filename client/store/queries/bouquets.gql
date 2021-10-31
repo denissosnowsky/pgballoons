@@ -1,0 +1,28 @@
+query Bouquets(
+  $skip: Int!
+  $take: Int!
+  $price: Int
+  $personType: Person
+  $code: Int
+) {
+  bouquets(
+    skip: $skip
+    take: $take
+    price: $price
+    personType: $personType
+    code: $code
+  ) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    personType
+    basketStatus @client {
+      isInBasket
+      basketQuantity
+    }
+  }
+}

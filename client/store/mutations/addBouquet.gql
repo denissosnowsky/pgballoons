@@ -1,0 +1,28 @@
+mutation AddBouquet(
+  $name: String!
+  $subname: String!
+  $price: Int!
+  $description: String!
+  $code: Int!
+  $image: Upload!
+  $personType: Person!
+) {
+  addBouquet(
+    name: $name
+    subname: $subname
+    price: $price
+    description: $description
+    code: $code
+    image: $image
+    personType: $personType
+  ) {
+    id
+    name
+    subname
+    price
+    description
+    code
+    image
+    personType
+  }
+}

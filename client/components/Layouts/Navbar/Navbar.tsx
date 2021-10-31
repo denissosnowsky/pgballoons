@@ -50,7 +50,7 @@ const NavBar = ({
       <div>
         <div className={cs([s.black, pushMobileMenu && s.showBlack])}></div>
         <Row className={cs([s.headerRow])}>
-          <Col xs={3} md={4} className={s.mobileMenuCol}>
+          <Col xs={2} sm={3} md={3} xl={4} className={s.mobileMenuCol}>
             <div
               className={cs([s.mobileMenu])}
               onClick={() => setPushMobileMenu(!pushMobileMenu)}
@@ -62,7 +62,7 @@ const NavBar = ({
               )}
             </div>
           </Col>
-          <Col style={{ position: "relative" }} xs={{ span: 4 }} md={4}>
+          <Col style={{ position: "relative" }} xs={7} sm={6} md={6} xl={4} className={s.logoCol}>
             <Link href="/">
               <a>
                 <div className={s.imageWrapper}>
@@ -72,9 +72,11 @@ const NavBar = ({
             </Link>
           </Col>
           <Col
-            xs={5}
-            md={4}
-            className="d-flex flex-column align-items-end justify-content-center"
+            xs={3}
+            sm={3}
+            md={3}
+            xl={4}
+            className={cs([s.contactsCol], "d-flex", "flex-column", "align-items-end", "justify-content-center")}
           >
             <div className={s.phoneBlock}>
               {dataPhone?.phones?.map(
@@ -103,12 +105,12 @@ const NavBar = ({
           </Col>
         </Row>
         <Row className={s.mainRow}>
-          <Col xs={0} sm={0} md={3} className={cs([s.col])}>
+          <Col xs={0} sm={0} md={3} className={cs([s.col, s.navbarCol])}>
             <nav className={s.navbar}>
               <NavC />
             </nav>
           </Col>
-          <Col xs={12} sm={12} md={9} className={s.col}>
+          <Col xs={12} sm={12} md={9} className={cs([s.col, s.mainCol])}>
             <div className={s.mainWrapper}>
               <div
                 className={cs([s.rollMenu, pushMobileMenu && s.rollMenuShow])}

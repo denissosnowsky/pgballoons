@@ -60,7 +60,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
   };
 
   return (
-    <Col className={s.card} xs={12} lg={4} md={6} sm={12}> 
+    <Col className={s.card} xs={12} lg={4} md={6} sm={6}> 
       <Card
         style={{ width: "18rem", borderRadius: "15px" }}
         className="border border-1"

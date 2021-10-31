@@ -3,7 +3,6 @@
   margin-left: 1rem;
 }
 
-
 .navbar a {
   color: #000;
   font-size: 19px;
@@ -24,10 +23,10 @@
   height: 84vh;
 }
 
-.mainWrapper{
+.mainWrapper {
   border-radius: 15px 15px 15px 15px;
   margin-left: 10px;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   overflow: hidden;
 }
 
@@ -54,7 +53,7 @@
   object-fit: fill;
 }
 
-.imageWrapper{
+.imageWrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -71,26 +70,26 @@
   padding: 30px;
 }
 
-.mobileMenuCol{
+.mobileMenuCol {
   display: flex;
   justify-content: start;
   align-items: center;
 }
 
-.mobileMenu{
+.mobileMenu {
   display: none;
   width: 60px;
   height: 60px;
   z-index: 4000;
 }
 
-.mobileMenu img{
+.mobileMenu img {
   height: 100%;
   width: 100%;
   object-fit: fill;
 }
 
-.black{
+.black {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -102,11 +101,11 @@
   display: none;
 }
 
-.showBlack{
+.showBlack {
   display: block;
 }
 
-.rollMenu{
+.rollMenu {
   display: none;
   position: absolute;
   top: 0px;
@@ -116,34 +115,51 @@
   margin-left: 10px;
 }
 
-.rollMenuShow{
+.rollMenuShow {
   display: block;
 }
 
-.phoneBlock{
+.phoneBlock {
   margin-right: 20px;
 }
 
-@media (max-width: 1200px){
-
+@media (max-width: 1200px) {
 }
 
-@media (max-width: 992px){
-
+@media (max-width: 992px) {
+}
+@media (width: 768px) {
+  .mainCol {
+    width: 100% !important;
+  }
 }
 
-@media (max-width: 768px){
-  .col:first-of-type{
+@media (max-width: 768px) {
+  .logo {
+    height: 50%;
+  }
+  .navbarCol {
     display: none;
   }
-  .mobileMenu{
-    display: block;
-  }
-  .phoneBlock{
+  .phoneBlock {
     margin-right: 0px;
+  }
+  .mobileMenu {
+    display: block;
   }
 }
 
-@media (max-width: 576px){
+@media (max-width: 575px) {
+  .mobileMenu {
+    height: 45px;
+  }
+}
 
+@media (max-width: 370px) {
+  .contactsCol {
+    display: none !important;
+  }
+  .logoCol {
+    width: 80% !important;
+  }
 }

@@ -98,18 +98,28 @@ export const RootQuery = new GraphQLObjectType({
     },
     colors: {
       type: new GraphQLList(ColorType),
-      resolve(_parent, _args, ctx: ApolloServerContext) {
-        return ctx.prisma.color.findMany();
+      args: {
+        categoryId: { type: GraphQLID }
+      },
+      async resolve(_parent, { categoryId }, ctx: ApolloServerContext) {
+        const balloons = await ctx.prisma.balloon.findMany({
+          where: { categoryId: categoryId && +categoryId },
+        });
+        const colors = await ctx.prisma.color.findMany();
+        const filteredColors = colors.filter((color) =>
+          balloons.some((balloon) => balloon.colorId === color.id)
+        );
+        return filteredColors;
       },
     },
     assortment: {
       type: new GraphQLList(AssortmentType),
       resolve(_parent, _args, ctx: ApolloServerContext) {
-        return ctx.prisma.assortment.findMany(
-          {orderBy: {
+        return ctx.prisma.assortment.findMany({
+          orderBy: {
             createdAt: "asc",
-          }}
-        );
+          },
+        });
       },
     },
     phones: {

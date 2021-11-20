@@ -31,6 +31,8 @@ const SearchInput: React.FC<SearchInputPropsType> = ({ externalClb, emptify }) =
         aria-describedby="basic-addon2"
         value={input}
         onChange={(e) => handleInput(e.target.value)}
+        as="input"
+        type="number"
       />
       <Button
         variant="outline-secondary"

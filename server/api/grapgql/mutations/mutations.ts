@@ -474,11 +474,13 @@ export const Mutation = new GraphQLObjectType({
       args: {
         oldPrice: { type: new GraphQLNonNull(GraphQLInt) },
         newPrice: { type: new GraphQLNonNull(GraphQLInt) },
+        categoryId: { type: GraphQLID },
       },
-      async resolve(_parent, { oldPrice, newPrice }, ctx: ApolloServerContext) {
+      async resolve(_parent, { oldPrice, newPrice, categoryId }, ctx: ApolloServerContext) {
         try {
           const balloons = await ctx.prisma.balloon.updateMany({
             where: {
+              categoryId: categoryId && +categoryId,
               price: oldPrice,
             },
             data: {

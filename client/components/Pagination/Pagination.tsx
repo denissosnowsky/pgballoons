@@ -30,7 +30,7 @@ const PaginationFC: React.FC<PaginationType> = ({
   }, [page]);
 
   //make portions of numbers buttons for pagination
-  let [portionNumber, setPortionNumber] = useState(1);
+  let [portionNumber, setPortionNumber] = useState(Math.ceil(page/portionSize));
   let portionCount = Math.ceil(pagesCount / portionSize);
   let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
   let rightPortionPageNumber = portionNumber * portionSize;
@@ -55,7 +55,7 @@ const PaginationFC: React.FC<PaginationType> = ({
   const handleNextPage = () => {
     setPortionNumber(portionNumber + 1);
     setPage(rightPortionPageNumber + 1);
-    setActive(leftPortionPageNumber - 1);
+    setActive(rightPortionPageNumber + 1);
   };
 
   return (

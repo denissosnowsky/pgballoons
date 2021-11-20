@@ -30,7 +30,7 @@ const Contacts: () => JSX.Element | void = () => {
   return (
     <NavBar title="Contacts">
       <ContentLayout>
-        {(loadingPhone===undefined || loadingSocial===undefined) ? (
+        {(dataPhone===undefined || dataSocial===undefined) ? (
           <Loading />
         ) : (
           <>

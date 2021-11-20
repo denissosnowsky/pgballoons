@@ -10,10 +10,6 @@ import { showError } from "../utils/showError";
 const Calculator: () => void | JSX.Element = () => {
   const { loading, error, data } = useAssortmentQuery();
 
-  const convertedArr = useMemo(
-    () => arrayConvertor(data && data.assortment),
-    [data]
-  );
 
   if (error) {
     console.log(error);
@@ -26,7 +22,7 @@ const Calculator: () => void | JSX.Element = () => {
         {data === undefined ? (
           <Loading />
         ) : (
-          <ListWithCounter measure={"$"} data={convertedArr} />
+          <ListWithCounter measure={"$"} data={arrayConvertor(data.assortment)} />
         )}
       </ContentLayout>
     </NavBar>

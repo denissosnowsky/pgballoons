@@ -11,11 +11,6 @@ import { showError } from "../utils/showError";
 const Price: () => JSX.Element | void = () => {
   const { loading, error, data } = useAssortmentQuery();
 
-  const convertedArr = useMemo(
-    () => arrayConvertor(data && data.assortment),
-    [data]
-  );
-
   if (error) {
     console.log(error);
     return showError("Error. Please, reload the page");
@@ -24,7 +19,7 @@ const Price: () => JSX.Element | void = () => {
   return (
     <NavBar title="Price">
       <ContentLayout>
-        {data===undefined ? <Loading /> : <List data={convertedArr} measure={"$"} />}
+        {data===undefined ? <Loading /> : <List data={arrayConvertor(data.assortment)} measure={"$"} />}
       </ContentLayout>
     </NavBar>
   );

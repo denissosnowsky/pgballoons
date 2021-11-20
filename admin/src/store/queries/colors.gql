@@ -1,5 +1,5 @@
-query Colors {
-  colors {
+query Colors($categoryId: ID) {
+  colors(categoryId: $categoryId) {
     id
     name
     cssName

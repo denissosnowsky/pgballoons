@@ -32,7 +32,7 @@ const BouqCatalog: ({
   pageQuery,
 }) => {
   const TAKE = 15;
-  const PRICE_STEP = 50;
+  const PRICE_STEP = 10;
 
   const params =
     typeof window != "undefined"

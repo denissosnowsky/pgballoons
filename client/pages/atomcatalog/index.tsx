@@ -42,7 +42,7 @@ const AtomCatalog: ({
   pageQuery,
 }) => {
   const TAKE = 15;
-  const PRICE_STEP = 50;
+  const PRICE_STEP = 10;
 
   const params =
     typeof window != "undefined"
@@ -110,7 +110,8 @@ const AtomCatalog: ({
     loading: loadingColor,
     error: errorColor,
     data: dataColor,
-  } = useColorsQuery();
+    fetchMore: fetchMoreColors,
+  } = useColorsQuery({ variables: { categoryId: category } });
 
   const {
     loading: loadingMaxPrice,
@@ -141,6 +142,14 @@ const AtomCatalog: ({
       },
     });
   }, [page, price, category, color]);
+
+  useEffect(() => {
+    fetchMoreColors({
+      variables: {
+        categoryId: category,
+      },
+    });
+  }, [category]);
 
   const handleFilter = useCallback(
     (type: "RANGE" | "CATEGORY" | "COLOR") =>
@@ -227,7 +236,7 @@ const AtomCatalog: ({
             >
               <DropdownBtnWithColor
                 title={colorInitName!}
-                items={dataColor?.colors!}
+                items={dataColor?.colors}
                 externalClb={handleFilter("COLOR")}
               />
             </Col>

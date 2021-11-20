@@ -81,7 +81,8 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
     loading: loadingColor,
     error: errorColor,
     data: dataColor,
-  } = useColorsQuery();
+    fetchMore: fetchMoreColors,
+  } = useColorsQuery({ variables: { categoryId: category } });
 
   const [
     deleteCard,
@@ -128,6 +129,14 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
       },
     });
   }, [page, category, color, code]);
+
+  useEffect(() => {
+    fetchMoreColors({
+      variables: {
+        categoryId: category,
+      },
+    });
+  }, [category]);
 
   const handleFilter = useCallback(
     (type: "CATEGORY" | "COLOR") => (filter: number | string | undefined) => {
@@ -189,10 +198,6 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
   }
 
   return (
-    <>
-      {loadingCategory || loadingColor ? (
-        <Loading />
-      ) : (
         <>
           {addModalShowed && (
             <AddBalloonModal
@@ -213,7 +218,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
               setShow={setChangePricesShowed}
               addMutation={(args) =>
                 changePrices({
-                  variables: args,
+                  variables: {...args, categoryId: category},
                 })
               }
             />
@@ -276,7 +281,6 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
           loadingDeleteC ||
           loadingAddProduct ||
           loadingChangePrices ||
-          loadingChangeBalloons ||
           networkStatusBalloons === NetworkStatus.refetch ||
           networkStatusCount === NetworkStatus.refetch ? (
             <Loading />
@@ -327,8 +331,6 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
             </>
           )}
         </>
-      )}
-    </>
   );
 };
 

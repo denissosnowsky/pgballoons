@@ -244,6 +244,7 @@ export type MutationDeleteSocialNetArgs = {
 export type MutationChangeManyPricesToBalloonsArgs = {
   oldPrice: Scalars['Int'];
   newPrice: Scalars['Int'];
+  categoryId?: Maybe<Scalars['ID']>;
 };
 
 
@@ -314,6 +315,11 @@ export type RootQueryTypeBalloonsArgs = {
   skip: Scalars['Int'];
   take: Scalars['Int'];
   code?: Maybe<Scalars['Int']>;
+};
+
+
+export type RootQueryTypeColorsArgs = {
+  categoryId?: Maybe<Scalars['ID']>;
 };
 
 
@@ -455,7 +461,7 @@ export type ChangeBouquetMutation = { __typename?: 'Mutation', changeBouquet?: M
 
 export type ChangeDeliveryPriceMutationVariables = Exact<{
   id: Scalars['ID'];
-  price?: Maybe<Scalars['String']>;
+  price: Scalars['String'];
 }>;
 
 
@@ -464,6 +470,7 @@ export type ChangeDeliveryPriceMutation = { __typename?: 'Mutation', changeDeliv
 export type ChangeManyPricesToBalloonsMutationVariables = Exact<{
   oldPrice: Scalars['Int'];
   newPrice: Scalars['Int'];
+  categoryId?: Maybe<Scalars['ID']>;
 }>;
 
 
@@ -599,7 +606,9 @@ export type CategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type CategoriesQuery = { __typename?: 'RootQueryType', categories?: Maybe<Array<Maybe<{ __typename?: 'Category', id: string, name: string }>>> };
 
-export type ColorsQueryVariables = Exact<{ [key: string]: never; }>;
+export type ColorsQueryVariables = Exact<{
+  categoryId?: Maybe<Scalars['ID']>;
+}>;
 
 
 export type ColorsQuery = { __typename?: 'RootQueryType', colors?: Maybe<Array<Maybe<{ __typename?: 'Color', id: string, name: string, cssName: string }>>> };
@@ -843,7 +852,7 @@ export type RootQueryTypeResolvers<ContextType = any, ParentType extends Resolve
   balloon?: Resolver<Maybe<ResolversTypes['Balloon']>, ParentType, ContextType, RequireFields<RootQueryTypeBalloonArgs, 'id'>>;
   balloons?: Resolver<Maybe<Array<Maybe<ResolversTypes['Balloon']>>>, ParentType, ContextType, RequireFields<RootQueryTypeBalloonsArgs, 'skip' | 'take'>>;
   categories?: Resolver<Maybe<Array<Maybe<ResolversTypes['Category']>>>, ParentType, ContextType>;
-  colors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Color']>>>, ParentType, ContextType>;
+  colors?: Resolver<Maybe<Array<Maybe<ResolversTypes['Color']>>>, ParentType, ContextType, RequireFields<RootQueryTypeColorsArgs, never>>;
   assortment?: Resolver<Maybe<Array<Maybe<ResolversTypes['Assortment']>>>, ParentType, ContextType>;
   phones?: Resolver<Maybe<Array<Maybe<ResolversTypes['Phone']>>>, ParentType, ContextType>;
   socialNets?: Resolver<Maybe<Array<Maybe<ResolversTypes['SocialNet']>>>, ParentType, ContextType>;
@@ -1376,7 +1385,7 @@ export type ChangeBouquetMutationHookResult = ReturnType<typeof useChangeBouquet
 export type ChangeBouquetMutationResult = Apollo.MutationResult<ChangeBouquetMutation>;
 export type ChangeBouquetMutationOptions = Apollo.BaseMutationOptions<ChangeBouquetMutation, ChangeBouquetMutationVariables>;
 export const ChangeDeliveryPriceDocument = gql`
-    mutation ChangeDeliveryPrice($id: ID!, $price: String) {
+    mutation ChangeDeliveryPrice($id: ID!, $price: String!) {
   changeDeliveryPrice(id: $id, price: $price) {
     id
     price
@@ -1411,8 +1420,12 @@ export type ChangeDeliveryPriceMutationHookResult = ReturnType<typeof useChangeD
 export type ChangeDeliveryPriceMutationResult = Apollo.MutationResult<ChangeDeliveryPriceMutation>;
 export type ChangeDeliveryPriceMutationOptions = Apollo.BaseMutationOptions<ChangeDeliveryPriceMutation, ChangeDeliveryPriceMutationVariables>;
 export const ChangeManyPricesToBalloonsDocument = gql`
-    mutation changeManyPricesToBalloons($oldPrice: Int!, $newPrice: Int!) {
-  changeManyPricesToBalloons(oldPrice: $oldPrice, newPrice: $newPrice)
+    mutation changeManyPricesToBalloons($oldPrice: Int!, $newPrice: Int!, $categoryId: ID) {
+  changeManyPricesToBalloons(
+    oldPrice: $oldPrice
+    newPrice: $newPrice
+    categoryId: $categoryId
+  )
 }
     `;
 export type ChangeManyPricesToBalloonsMutationFn = Apollo.MutationFunction<ChangeManyPricesToBalloonsMutation, ChangeManyPricesToBalloonsMutationVariables>;
@@ -1432,6 +1445,7 @@ export type ChangeManyPricesToBalloonsMutationFn = Apollo.MutationFunction<Chang
  *   variables: {
  *      oldPrice: // value for 'oldPrice'
  *      newPrice: // value for 'newPrice'
+ *      categoryId: // value for 'categoryId'
  *   },
  * });
  */
@@ -2120,8 +2134,8 @@ export type CategoriesQueryHookResult = ReturnType<typeof useCategoriesQuery>;
 export type CategoriesLazyQueryHookResult = ReturnType<typeof useCategoriesLazyQuery>;
 export type CategoriesQueryResult = Apollo.QueryResult<CategoriesQuery, CategoriesQueryVariables>;
 export const ColorsDocument = gql`
-    query Colors {
-  colors {
+    query Colors($categoryId: ID) {
+  colors(categoryId: $categoryId) {
     id
     name
     cssName
@@ -2141,6 +2155,7 @@ export const ColorsDocument = gql`
  * @example
  * const { data, loading, error } = useColorsQuery({
  *   variables: {
+ *      categoryId: // value for 'categoryId'
  *   },
  * });
  */

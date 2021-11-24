@@ -47,9 +47,6 @@ export const RootQuery = new GraphQLObjectType({
           skip,
           take,
           where: { price: { lte: price }, personType, code },
-          orderBy: {
-            createdAt: "desc",
-          },
         });
       },
     },
@@ -83,10 +80,7 @@ export const RootQuery = new GraphQLObjectType({
             categoryId: categoryId && +categoryId,
             colorId: colorId && +colorId,
             code,
-          },
-          orderBy: {
-            updatedAt: "desc",
-          },
+          }
         });
       },
     },

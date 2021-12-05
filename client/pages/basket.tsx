@@ -40,7 +40,7 @@ const Basket: NextPage = () => {
     phone: "",
     email: "",
     address: "",
-    code: null,
+    code: 0,
     date: "",
     time: "",
   };

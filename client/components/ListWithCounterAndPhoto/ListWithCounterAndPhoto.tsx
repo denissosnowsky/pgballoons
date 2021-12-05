@@ -41,7 +41,6 @@ const ListWithCounterAndPhoto: React.FC<ListWithCounterAndPhotoProps> = ({
     setCounters(counterStateChanger(counters, id, 0, initValue));
     deleteFromBasket && deleteFromBasket(id);
   };
-
   return (
     <ListGroup variant="flush" className={s.group}>
       {data.map((i) => (

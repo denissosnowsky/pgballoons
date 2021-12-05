@@ -2,6 +2,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import ContentLayout from "../components/Layouts/ContentLayout/ContentLayout";
 import NavBar from "../components/Layouts/Navbar/Navbar";
+import Loading from "../components/Loading/Loading";
 import PhoneBlock from "../components/PhoneBlock/PhoneBlock";
 import SocialNetBlock from "../components/SocialNetBlock/SocialNetBlock";
 import { usePhonesQuery, useSocialNetsQuery } from "../store/generated/graphql";
@@ -25,6 +26,8 @@ const Contacts: () => JSX.Element | void = () => {
     return showError("Error. Please, reload the page");
   }
 
+  if (loadingPhone || loadingSocial) return <Loading />;
+
   return (
     <NavBar title="Contacts">
       <ContentLayout>
@@ -34,7 +37,7 @@ const Contacts: () => JSX.Element | void = () => {
               className="d-flex justify-content-center flex-column align-items-center"
               style={{ paddingTop: "70px", paddingBottom: "20px" }}
             >
-              {dataPhone?.phones?.map((item) => (
+              {dataPhone.phones.map((item) => (
                 <PhoneBlock
                   fontSize="30px"
                   number={item!.number}
@@ -45,7 +48,7 @@ const Contacts: () => JSX.Element | void = () => {
           </Row>
           <Row>
             <Col className="d-flex justify-content-center">
-              {dataSocial?.socialNets?.map((item) => (
+              {dataSocial.socialNets.map((item) => (
                 <SocialNetBlock
                   key={item?.id}
                   size="70px"

@@ -41,7 +41,8 @@ const NavBar = ({
     console.log(errorSocial);
     showError("Error. Please, reload the page");
   }
-
+console.log(dataPhone);
+console.log(dataSocial);
   return (
     <>
       <Head>

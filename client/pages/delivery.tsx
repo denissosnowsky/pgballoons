@@ -24,10 +24,10 @@ const Delivery: () => JSX.Element | void = () => {
             <ListGroup variant="flush" className={s.ul}>
               <ListGroup.Item className={s.header}>Delivery</ListGroup.Item>
               <ListGroup.Item className={s.body}>
-                For purchases over $75 – <span className={s.price}>free</span>{" "}
+                For purchases over $100 – <span className={s.price}>free</span>{" "}
                 delivery
                 <br />
-                For purchases under $75 – delivery cost{" "}
+                For purchases under $100 – delivery cost{" "}
                 <span className={s.price}>$</span>
                 <span className={s.price}>
                   {data?.deliveryPrice?.price}
@@ -39,8 +39,8 @@ const Delivery: () => JSX.Element | void = () => {
             <ListGroup variant="flush" className={s.ul}>
               <ListGroup.Item className={s.header}>Payment</ListGroup.Item>
               <ListGroup.Item className={s.body}>
-                You can pay for purchases by credit card, cash or pay online on
-                our website.
+                You can pay for purchases by cash, transfer via Zelle on
+                credit/debit card.
               </ListGroup.Item>
             </ListGroup>
             <ListGroup variant="flush" className={s.ul}>

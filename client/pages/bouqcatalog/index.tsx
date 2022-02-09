@@ -22,6 +22,7 @@ import { useSynchronizeUrl } from "../../hooks/useSynchronizeUrl";
 interface BouqCatalogPropsType {
   priceQuery: string | null;
   pageQuery: string | null;
+  szi: number;
 }
 
 const BouqCatalog: ({

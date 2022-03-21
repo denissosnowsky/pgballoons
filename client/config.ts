@@ -1,2 +1,2 @@
-export const graphqlUrl = 'https://pgballoons-admin.biz.ua/graphql';
+export const graphqlUrl = 'http://localhost:5000/graphql';
 export const googleUrl = "https://storage.googleapis.com/sharikkyiv/";

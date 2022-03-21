@@ -54,7 +54,8 @@ const ColorsPage: React.FC<ColorsPagePropsType> = () => {
 
   if (loadingColQ || loadingDeleteColors || loadingAddColors)
     return <Loading />;
-
+    
+console.log(dataColQ);
   return (
     <>
       {isShowed && (

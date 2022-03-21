@@ -1,6 +1,6 @@
 ## Description
 
-This is a website for selling balloons. Here user can find a page with bouquets with price fiter, a page with separate ballons with price, color and catagery filters. Also, there are pages with assortment and prices, calculator, cart, contacts and delivery and payments terms. Admin can use 
+This is a website for selling balloons. Here user can find a page with bouquets with price filter, a page with separate ballons with price, color and catagery filters. Also, there are pages with assortment and prices, calculator, cart, contacts and delivery and payments terms. Admin can use admin panel for editing data.
 
 The website consists of admin, server and client parts.
 

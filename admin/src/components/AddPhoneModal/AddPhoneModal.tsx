@@ -54,7 +54,7 @@ const AddPhoneModal: React.FC<AddPhoneModalPropsType> = ({
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Phone number (+1xxxxxxxxxx):
+            Phone number (xxxxxxxxxx):
             </Form.Label>
             <Col sm="10">
               <Form.Control

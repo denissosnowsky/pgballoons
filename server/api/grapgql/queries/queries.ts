@@ -100,10 +100,16 @@ export const RootQuery = new GraphQLObjectType({
           where: { categoryId: categoryId && +categoryId },
         });
         const colors = await ctx.prisma.color.findMany();
-        const filteredColors = colors.filter((color) =>
-          balloons.some((balloon) => balloon.colorId === color.id)
-        );
-        return filteredColors;
+
+        if(categoryId){
+          const filteredColors = colors.filter((color) =>
+            balloons.some((balloon) => balloon.colorId === color.id)
+          );
+          return filteredColors;
+        } else {
+          return colors;
+        }
+
       },
     },
     assortment: {

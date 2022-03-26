@@ -24,7 +24,10 @@ Admin was written with React create app, Apollo Client, Typescript.
 
 #### `yarn migrate`
 
-In order to make this step successfully user should have postgres installed on local machine, and create new database named 'sharikusa'.
+In order to make this step successfully user should have postgres installed on local machine, and create new database named 'sharikusa'. After installation fill the password to your postgres user as shown below in `<password>`:
+
+`DATABASE_URL="postgresql://postgres:<password>@localhost:5432/sharikusa?schema=public"`
+
 
 ### Step 4
 

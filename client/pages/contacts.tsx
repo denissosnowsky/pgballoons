@@ -25,8 +25,10 @@ const Contacts: () => JSX.Element | void = () => {
     console.log(errorSocial);
     return showError("Error. Please, reload the page");
   }
-
   if (loadingPhone || loadingSocial) return <Loading />;
+
+  console.log("page: \n" + JSON.stringify(dataPhone));
+  console.log("page: \n" + JSON.stringify(dataSocial));
 
   return (
     <NavBar title="Contacts">
@@ -37,27 +39,31 @@ const Contacts: () => JSX.Element | void = () => {
               className="d-flex justify-content-center flex-column align-items-center"
               style={{ paddingTop: "70px", paddingBottom: "20px" }}
             >
-              {dataPhone.phones.map((item) => (
-                <PhoneBlock
-                  fontSize="30px"
-                  number={item!.number}
-                  key={item?.id}
-                />
-              ))}
+              {dataPhone &&
+                dataPhone.phones.length > 0 &&
+                dataPhone.phones.map((item) => (
+                  <PhoneBlock
+                    fontSize="30px"
+                    number={item!.number}
+                    key={item?.id}
+                  />
+                ))}
             </Col>
           </Row>
           <Row>
             <Col className="d-flex justify-content-center">
-              {dataSocial.socialNets.map((item) => (
-                <SocialNetBlock
-                  key={item?.id}
-                  size="70px"
-                  margin="10px"
-                  title={item!.name}
-                  href={item!.link}
-                  image={item!.image}
-                />
-              ))}
+              {dataSocial &&
+                dataSocial.socialNets.length > 0 &&
+                dataSocial.socialNets.map((item) => (
+                  <SocialNetBlock
+                    key={item?.id}
+                    size="70px"
+                    margin="10px"
+                    title={item!.name}
+                    href={item!.link}
+                    image={item!.image}
+                  />
+                ))}
             </Col>
           </Row>
         </>

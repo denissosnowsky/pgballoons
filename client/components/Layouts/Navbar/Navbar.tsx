@@ -41,8 +41,8 @@ const NavBar = ({
     console.log(errorSocial);
     showError("Error. Please, reload the page");
   }
-console.log(dataPhone);
-console.log(dataSocial);
+  console.log("navbar: \n" + JSON.stringify(dataPhone));
+  console.log("navbar: \n" + JSON.stringify(dataSocial));
   return (
     <>
       <Head>
@@ -63,7 +63,14 @@ console.log(dataSocial);
               )}
             </div>
           </Col>
-          <Col style={{ position: "relative" }} xs={7} sm={6} md={6} xl={4} className={s.logoCol}>
+          <Col
+            style={{ position: "relative" }}
+            xs={7}
+            sm={6}
+            md={6}
+            xl={4}
+            className={s.logoCol}
+          >
             <Link href="/">
               <a>
                 <div className={s.imageWrapper}>
@@ -77,30 +84,40 @@ console.log(dataSocial);
             sm={3}
             md={3}
             xl={4}
-            className={cs([s.contactsCol], "d-flex", "flex-column", "align-items-end", "justify-content-center")}
+            className={cs(
+              [s.contactsCol],
+              "d-flex",
+              "flex-column",
+              "align-items-end",
+              "justify-content-center"
+            )}
           >
             <div className={s.phoneBlock}>
-              {dataPhone?.phones?.map(
-                (item, i) =>
-                  i === 0 && (
-                    <PhoneBlock
-                      fontSize="20px"
-                      number={item!.number}
-                      key={item?.id}
-                    />
-                  )
-              )}
+              {dataPhone &&
+                dataPhone.phones.length > 0 &&
+                dataPhone.phones.map(
+                  (item, i) =>
+                    i === 0 && (
+                      <PhoneBlock
+                        fontSize="20px"
+                        number={item!.number}
+                        key={item?.id}
+                      />
+                    )
+                )}
               <div className="d-flex justify-content-center">
-                {dataSocial?.socialNets?.map((item) => (
-                  <SocialNetBlock
-                    key={item?.id}
-                    size="35px"
-                    margin="5px"
-                    title={item!.name}
-                    href={item!.link}
-                    image={item!.image}
-                  />
-                ))}
+                {dataSocial &&
+                  dataSocial.socialNets.length > 0 &&
+                  dataSocial.socialNets.map((item) => (
+                    <SocialNetBlock
+                      key={item?.id}
+                      size="35px"
+                      margin="5px"
+                      title={item!.name}
+                      href={item!.link}
+                      image={item!.image}
+                    />
+                  ))}
               </div>
             </div>
           </Col>

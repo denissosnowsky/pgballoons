@@ -24,8 +24,8 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
   };
 
   const handleChangePrices = () => {
-    if (!oldPrice) return showError("Enter old price");
-    if (!newPrice) return showError("Enter new price");
+    if (!oldPrice) return showError("Введіть стару ціну");
+    if (!newPrice) return showError("Введіть нову ціну");
 
     const args: ChangePriceFromOldToNew = {
         oldPrice: oldPrice!,
@@ -34,7 +34,7 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
     console.log(args);
     addMutation(args);
     setShow(false);
-    showSuccess('Prices successfully changed');
+    showSuccess('Ціна успішно змінена');
   };
 
   return (
@@ -47,19 +47,19 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Change prices
+        Змінити ціни
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Old price:
+            Стара ціна:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter old price"
+                placeholder="Введіть стару ціна"
                 value={oldPrice}
                 onChange={(e) =>
                   setOldPrice(e.target.value ? +e.target.value : undefined)
@@ -69,12 +69,12 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            New price:
+            Нова ціна:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter new price"
+                placeholder="Введіть нову ціну"
                 value={newPrice}
                 onChange={(e) =>
                   setNewPrice(e.target.value ? +e.target.value : undefined)
@@ -90,7 +90,7 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
@@ -99,7 +99,7 @@ const ChangeManyPricesModal: React.FC<ChangeManyPricesModalPropsType> = ({isShow
               className="my-2 w-75"
               onClick={handleChangePrices}
             >
-              Change
+              Змінити
             </Button>
           </Col>
         </Row>

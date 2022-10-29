@@ -89,7 +89,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
               className={cs([s.button], "w-50", "btn-sm", "m-1")}
               onClick={()=>handleDeleteItem(id)}
             >
-              Delete
+              Видалити
             </Button>
           ) : (
             <Button
@@ -97,7 +97,7 @@ const CardComponent: React.FC<CardComponentProps> = ({
               className={cs([s.button], "w-50", "btn-sm", "m-1")}
               onClick={handleAddToBasket}
             >
-            Add To Cart
+            В кошик
             </Button>
           )}
           <Link href={`${link}/${id}`}>
@@ -106,11 +106,11 @@ const CardComponent: React.FC<CardComponentProps> = ({
                 variant="outline-primary"
                 className={cs([s.button], "w-50", "btn-sm", "m-1")}
               >
-                Details...
+                Деталі...
               </Button>
             </a>
           </Link>
-          <Card.Text className={s.code}>Code: {code}</Card.Text>
+          <Card.Text className={s.code}>Артикул: {code}</Card.Text>
         </Card.Body>
       </Card>
     </Col>

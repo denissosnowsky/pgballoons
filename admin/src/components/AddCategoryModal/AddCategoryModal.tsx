@@ -27,7 +27,7 @@ const AddCategoryModal: React.FC<AddCategoryPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!name) return showError("Enter Category Name");
+    if (!name) return showError("Введіть ім'я катеогрії");
 
     const args: AddCategoryMutationVariables = {
       name: name!,
@@ -35,7 +35,7 @@ const AddCategoryModal: React.FC<AddCategoryPropsType> = ({
     console.log(args);
     addMutation(args);
     setShow(false);
-    showSuccess('Category successfully added');
+    showSuccess('Катеогрія успішно додана');
   };
 
   return (
@@ -48,19 +48,19 @@ const AddCategoryModal: React.FC<AddCategoryPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add category
+        Додати категорію
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Name of category:
+            Ім'я категорії:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Name of category"
+                placeholder="Ім'я категорії"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -74,12 +74,12 @@ const AddCategoryModal: React.FC<AddCategoryPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
             <Button variant="success" className="my-2 w-75" onClick={handleAdd}>
-            Save
+            Зберегти
             </Button>
           </Col>
         </Row>

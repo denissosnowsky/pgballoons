@@ -77,7 +77,7 @@ const ListWithCounter: React.FC<ListWithCounterProps> = ({ data, measure }) => {
         )))}
       <ListGroup.Item className={s.li}>
         <Row className={s.sumRow}>
-          <Col xs={6}>TOTAL: </Col>
+          <Col xs={6}>ВСЬОГО: </Col>
           <Col xs={6} className={s.lastCol}>
             {sum} {measure}
           </Col>

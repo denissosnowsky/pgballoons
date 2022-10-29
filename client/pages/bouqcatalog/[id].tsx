@@ -19,13 +19,13 @@ const BouqItem: () => void | JSX.Element = () => {
 
   if (error) {
     console.log(error);
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
 
   const bouquet = data && data?.bouquet;
 console.log(data?.bouquet);
   return (
-    <NavBar title={"Bouquets"}>
+    <NavBar title={"Букети"}>
       <ContentLayout>
         {loading ? (
           <Loading />
@@ -37,7 +37,7 @@ console.log(data?.bouquet);
             code={bouquet!.code}
             img={bouquet!.image}
             price={bouquet!.price}
-            measure={"$"}
+            measure={"грн."}
             id={bouquet!.id}
             basketStatus={bouquet!.basketStatus!}
           />

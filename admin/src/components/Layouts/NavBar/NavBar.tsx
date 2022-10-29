@@ -23,37 +23,37 @@ const NavBar: React.FC<NavBarProps> = memo(({ children }) => {
             <Nav className={cs([s.bootNav], "flex-column")}>
               <div className={s.linkWrapper}>
                 <NavLink to="/bouquets">
-                  <i className="bi bi-book"></i>Manage bouquets
+                  <i className="bi bi-book"></i>Букети
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/balloons">
-                  <i className="bi bi-layers"></i>Manage balloons
+                  <i className="bi bi-layers"></i>Кульки
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/assortment">
-                  <i className="bi bi-tag"></i>Manage assortment
+                  <i className="bi bi-tag"></i>Асортимент
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/categories">
-                  <i className="bi bi-stack"></i>Manage categories
+                  <i className="bi bi-stack"></i>Категорії
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/colors">
-                  <i className="bi bi-palette"></i>Manage colors
+                  <i className="bi bi-palette"></i>Кольори
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/contacts">
-                  <i className="bi bi-telephone"></i>Manage contacts
+                  <i className="bi bi-telephone"></i>Контакти
                 </NavLink>
               </div>
               <div className={s.linkWrapper}>
                 <NavLink to="/delivery">
-                  <i className="bi bi-truck"></i>Manage delivery
+                  <i className="bi bi-truck"></i>Доставка
                 </NavLink>
               </div>
             </Nav>

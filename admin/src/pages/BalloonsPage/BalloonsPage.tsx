@@ -193,7 +193,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
         ? errorChangePrices
         : errorChangeBalloons
     );
-    showError("Error. Reload the page!");
+    showError("Помилка. Перезагрузіть сторінку!");
     return;
   }
 
@@ -230,7 +230,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                 className="d-flex justify-content-center align-items-center"
               >
                 <DropdownBtn
-                  title={"Select a category | All"}
+                  title={"Виберіть категорію | Всі"}
                   items={dataCategory?.categories!}
                   externalClb={handleFilter("CATEGORY")}
                   emptify={emptyCat}
@@ -242,7 +242,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                   variant="success"
                   onClick={() => setAddModalShowed(true)}
                 >
-                  <i className="bi bi-plus-circle"></i> Add Product
+                  <i className="bi bi-plus-circle"></i> Додати продукт
                 </Button>
               </Col>
             </Row>
@@ -252,7 +252,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                 className="d-flex justify-content-center align-items-center"
               >
                 <DropdownBtnWithColor
-                  title={"Select a color | All"}
+                  title={"Виберіть колір | Всі"}
                   items={dataColor?.colors!}
                   externalClb={handleFilter("COLOR")}
                   emptify={emptyCol}
@@ -263,7 +263,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                   className={s.btnRight}
                   onClick={() => setChangePricesShowed(true)}
                 >
-                  Change many prices
+                  Змінити багато цін
                 </Button>
               </Col>
             </Row>
@@ -306,7 +306,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                           deleteCard({
                             variables: { id: item?.id! },
                           });
-                          showSuccess("Balloon successfully removed");
+                          showSuccess("Кулька успішно видалена");
                         }}
                         categories={dataCategory?.categories!}
                         colors={dataColor?.colors!}
@@ -326,7 +326,7 @@ const BalloonsPage: React.FC<BalloonsPagePropsType> = () => {
                   />
                 </>
               ) : (
-                <div className={s.empty}>There are no such balloons</div>
+                <div className={s.empty}>Немає таких кульок</div>
               )}
             </>
           )}

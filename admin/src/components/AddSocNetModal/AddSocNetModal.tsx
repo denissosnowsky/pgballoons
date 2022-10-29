@@ -29,9 +29,9 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!name) return showError("Enter the Name of the Social Network");
-    if (!link) return showError("Enter Link");
-    if (!image) return showError("Enter the name of the picture");
+    if (!name) return showError("Введіть ім'я соц. мережі");
+    if (!link) return showError("Введіть посилання");
+    if (!image) return showError("Введіть ім'я картинки");
 
     const args: AddSocialNetMutationVariables = {
       name: name!,
@@ -40,7 +40,7 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
     };
     addMutation(args);
     setShow(false);
-    showSuccess('Social network successfully added');
+    showSuccess('Соц. мережа успішно додана');
   };
 
   return (
@@ -53,19 +53,19 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add social network
+        Додати соц. мережу
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Social network name:
+            Ім'я соц. мережі:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Social network name"
+                placeholder="Ім'я соц. мережі"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -73,12 +73,12 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Social network link:
+            Посилання соц. мережі:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Social network link"
+                placeholder="Посилання соц. мережі"
                 value={link}
                 onChange={(e) => setLink(e.target.value)}
               />
@@ -86,12 +86,12 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-              Image link (/name.png):
+            Ім'я картинки (/name.png):
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Image link"
+                placeholder="Ім'я картинки"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               />
@@ -105,12 +105,12 @@ const AddSocNetModal: React.FC<AddSocNetModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
             <Button variant="success" className="my-2 w-75" onClick={handleAdd}>
-            Save
+            Зберегти
             </Button>
           </Col>
         </Row>

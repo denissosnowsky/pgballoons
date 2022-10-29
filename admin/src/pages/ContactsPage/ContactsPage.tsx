@@ -88,7 +88,7 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
         ? errorPhones
         : errorSoc
     );
-    showError("Error. Reload the page!");
+    showError("Помилка. Перезагрузіть сторінку!");
     return;
   }
 
@@ -110,10 +110,10 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
           className="d-flex justify-content-center align-items-center"
         >
           <Button className="m-2" onClick={() => setSwitchPhone(true)}>
-          Change Phones
+          Змінити номера
           </Button>
           <Button className="m-2" onClick={() => setSwitchPhone(false)}>
-          Change Social Networks
+          Змінити соц. мережі
           </Button>
         </Col>
       </Row>
@@ -136,16 +136,16 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
               dataPhones.phones.map((obj) => (
                 <ListGroup.Item className={s.li}>
                   <div className={s.listWrapper}>
-                    <span>{`Telephone: ${obj.number}`}</span>
+                    <span>{`Телефон: ${obj.number}`}</span>
                     <div>
                       <Button
                         variant="danger"
                         onClick={() => {
                           deletePhone({ variables: { id: obj.id } });
-                          showSuccess("Phone successfully removed");
+                          showSuccess("Телефон успішно видалений");
                         }}
                       >
-                        Delete
+                        Видалити
                       </Button>
                     </div>
                   </div>
@@ -156,7 +156,7 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
                 variant="success"
                 onClick={() => setAddModalPhoneShowed(true)}
               >
-                <i className="bi bi-plus-circle"></i> Add
+                <i className="bi bi-plus-circle"></i> Додати
               </Button>
             </div>
           </>
@@ -178,24 +178,24 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
               dataSoc.socialNets.map((obj) => (
                 <ListGroup.Item className={s.li}>
                   <div className={s.listWrapper}>
-                    <span>{`Social Network: ${obj.name}`}</span>
+                    <span>{`Соц. мережа: ${obj.name}`}</span>
                     <div>
                       <Button
                         variant="danger"
                         onClick={() => {
                           deleteSoc({ variables: { id: obj.id } });
-                          showSuccess("Social Network successfully removed");
+                          showSuccess("Соц. мережа успішно видалена");
                         }}
                       >
-                        Delete
+                        Видалити
                       </Button>
                     </div>
                   </div>
                   <div>
-                    <span>Link: {obj.link}</span>
+                    <span>Посилання: {obj.link}</span>
                   </div>
                   <div>
-                    <span>Image link: {obj.image}</span>
+                    <span>Ім'я картинки: {obj.image}</span>
                   </div>
                 </ListGroup.Item>
               ))}
@@ -204,7 +204,7 @@ const ContactsPage: React.FC<ContactsPagePropsType> = () => {
                 variant="success"
                 onClick={() => setAddModalSocNetShowed(true)}
               >
-                <i className="bi bi-plus-circle"></i> Add
+                <i className="bi bi-plus-circle"></i> Додати
               </Button>
             </div>
           </>

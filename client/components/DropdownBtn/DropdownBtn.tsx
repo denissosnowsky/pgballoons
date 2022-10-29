@@ -14,7 +14,7 @@ const DropdownBtn: React.FC<DropdownBtnProps> = ({ title, items, externalClb }) 
   const [chosen, setChosen] = useState<string>(title);
 
   const handleAllBtn = () => {
-    setChosen("All");
+    setChosen("Всі");
     externalClb && externalClb(undefined);
   };
 

@@ -4,28 +4,27 @@ import config from "config";
 
 export const sendTelegramMessage = async (o: OrderType) => {
   let userInfo = `
-Name: ${o.name}
-Phone: ${o.phone}
+Ім'я: ${o.name}
+Телефон: ${o.phone}
 E-mail: ${o.email}
-Address: ${o.address}
-ZIP-Code: ${o.code}
-Day: ${o.date}
-Time: ${o.time}
-Orders: ${o.orders.length}
-Total price: ${o.totalPrice}
-UserID: ${o.userId}
+Адреса: ${o.address}
+День: ${o.date}
+Час: ${o.time}
+Замовлення: ${o.orders.length}
+Повна ціна: ${o.totalPrice}
+ID клієнта: ${o.userId}
 `;
 
   for (let i = 0; i < o.orders.length; i++) {
     const itemInfo = `
-Order ${i+1} ------------------
-Name: ${o.orders[i].name}
-Price: ${o.orders[i].price}
-Quantity: ${o.orders[i].quantity}
-Composition: ${o.orders[i].description}
-Code: ${o.orders[i].code}
-Photo: ${o.orders[i].image}
-UserID: ${o.userId}
+Замолення ${i+1} ------------------
+Ім'я: ${o.orders[i].name}
+Ціна: ${o.orders[i].price}
+Кількість: ${o.orders[i].quantity}
+Опис: ${o.orders[i].description}
+Артикул: ${o.orders[i].code}
+Фото: ${o.orders[i].image}
+ID клієнта: ${o.userId}
 `;
     userInfo += itemInfo;
   }

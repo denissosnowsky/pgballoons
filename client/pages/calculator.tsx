@@ -13,16 +13,16 @@ const Calculator: () => void | JSX.Element = () => {
 
   if (error) {
     console.log(error);
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
 
   return (
-    <NavBar title="Calculator">
+    <NavBar title="Калькулятор">
       <ContentLayout>
         {data === undefined ? (
           <Loading />
         ) : (
-          <ListWithCounter measure={"$"} data={arrayConvertor(data.assortment)} />
+          <ListWithCounter measure={"грн."} data={arrayConvertor(data.assortment)} />
         )}
       </ContentLayout>
     </NavBar>

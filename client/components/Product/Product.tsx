@@ -69,7 +69,7 @@ const Product: React.FC<ProductProps> = ({
           {price} {measure}
         </div>
         <div className={s.desc}>
-          <span>Composition</span>: {desc}
+          <span>Опис</span>: {desc}
         </div>
         <div>
           <Counter
@@ -87,7 +87,7 @@ const Product: React.FC<ProductProps> = ({
               className={cs([s.button], "m-1")}
               onClick={() => handleDeleteItem(id)}
             >
-              Delete
+              Видалити
             </Button>
           ) : (
             <Button
@@ -95,11 +95,11 @@ const Product: React.FC<ProductProps> = ({
               className={cs([s.button], "m-1")}
               onClick={handleAddToBasket}
             >
-              Add To Cart
+              В кошик
             </Button>
           )}
         </div>
-        <div className={s.code}>Code: {code}</div>
+        <div className={s.code}>Артикул: {code}</div>
       </Col>
     </Row>
   );

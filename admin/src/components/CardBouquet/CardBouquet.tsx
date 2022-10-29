@@ -63,11 +63,11 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
   };
 
   const handleSave = () => {
-    if (!name1) return showError("Enter Name 1");
-    if (!name2) return showError("Enter Name 2");
-    if (!newPrice) return showError("Enter Price");
-    if (!desc) return showError("Enter Composition");
-    if (!newCode) return showError("Enter Code");
+    if (!name1) return showError("Введіть перше ім'я");
+    if (!name2) return showError("Введіть друге ім'я");
+    if (!newPrice) return showError("Введіть ціну");
+    if (!desc) return showError("Введіть опис");
+    if (!newCode) return showError("Введіть артикул");
     const args: ChangeBouquetMutationVariables = {
       id,
       name: name1!,
@@ -80,7 +80,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
     addMutation(args);
     setChange(false);
     setPreload("");
-    showSuccess('Bouquet successfully changed');
+    showSuccess('Букет успішно змінений');
   };
 
   return (
@@ -98,23 +98,23 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
             />
             <Card.Body className="d-flex flex-column align-items-center pb-2">
               <Card.Title className={s.title}>
-                <span>Name 1: </span>
+                <span>Перше ім'я": </span>
                 {name}
               </Card.Title>
               <Card.Title className={s.title}>
-                <span>Name 2: </span>
+                <span>Друге ім'я": </span>
                 {subName}
               </Card.Title>
               <Card.Title className={s.title}>
-                <span>Price: </span>
+                <span>Ціна: </span>
                 {price} {measure}
               </Card.Title>
               <Card.Title className={s.title}>
-                <span>Composition: </span>
+                <span>Опис: </span>
                 {description}
               </Card.Title>
               <Card.Title className={s.title}>
-                <span>Code: </span>
+                <span>Артикул: </span>
                 {code}
               </Card.Title>
               <div className={s.btns}>
@@ -123,14 +123,14 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                   className={cs([s.button], "w-50", "btn-sm", "m-1")}
                   onClick={deleteCard}
                 >
-                  Delete
+                  Видалити
                 </Button>
                 <Button
                   variant="primary"
                   className={cs([s.button], "w-50", "btn-sm", "m-1")}
                   onClick={() => setChange(!change)}
                 >
-                  Change
+                  Змінити
                 </Button>
               </div>
             </Card.Body>
@@ -146,7 +146,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                     id="img"
                   />
                   <label htmlFor="img" className={s.imgLabel}></label>
-                  <Button variant="outline-primary">Change photo</Button>
+                  <Button variant="outline-primary">Змінити фото</Button>
                 </div>
                 <div className={s.imgBody}>
                   {preload && <img src={preload as string}></img>}
@@ -154,7 +154,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
               </div>
               <Card.Body className="d-flex flex-column align-items-center pb-2">
                 <Card.Title className={cs([s.title], "d-flex")}>
-                  <span className="w-50">Name 1: </span>
+                  <span className="w-50">Перше ім'я": </span>
                   <input
                     type={"text"}
                     className="w-50"
@@ -163,7 +163,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                   />
                 </Card.Title>
                 <Card.Title className={cs([s.title], "d-flex")}>
-                  <span className="w-50">Name 2: </span>
+                  <span className="w-50">Друге ім'я": </span>
                   <input
                     type={"text"}
                     className="w-50"
@@ -172,7 +172,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                   />
                 </Card.Title>
                 <Card.Title className={cs([s.title], "d-flex")}>
-                  <span className="w-50">Price: </span>
+                  <span className="w-50">Ціна: </span>
                   <input
                     type={"number"}
                     className="w-50"
@@ -183,7 +183,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                   />
                 </Card.Title>
                 <Card.Title className={cs([s.title], "d-flex")}>
-                  <span className="w-50">Composition: </span>
+                  <span className="w-50">Опис: </span>
                   <textarea
                     className="w-50"
                     value={desc}
@@ -191,7 +191,7 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                   />
                 </Card.Title>
                 <Card.Title className={cs([s.title], "d-flex")}>
-                  <span className="w-50">Code: </span>
+                  <span className="w-50">Артикул: </span>
                   <input
                     type={"number"}
                     className="w-50"
@@ -207,14 +207,14 @@ const CardBouquet: React.FC<CardBouquetPropsType> = ({
                     className={cs([s.button], "w-50", "btn-sm", "m-1")}
                     onClick={handleCancel}
                   >
-                    Cancel
+                    Відмінити
                   </Button>
                   <Button
                     variant="primary"
                     className={cs([s.button], "w-50", "btn-sm", "m-1")}
                     onClick={handleSave}
                   >
-                    Save
+                    Зберегти
                   </Button>
                 </div>
               </Card.Body>

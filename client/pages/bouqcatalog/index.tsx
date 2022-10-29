@@ -112,7 +112,7 @@ const BouqCatalog: ({
     console.log(
       errorBouquets ? errorBouquets : errorCount ? errorCount : errorMaxPrice
     );
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
 
   const maxPrice =
@@ -123,7 +123,7 @@ const BouqCatalog: ({
         (PRICE_STEP - (dataMaxPrice?.maxBouquetPrice! % PRICE_STEP)));
 
   return (
-    <NavBar title="Bouquets">
+    <NavBar title="Букети">
       <ContentLayout>
         {networkStatusBouquets === NetworkStatus.fetchMore ||
         networkStatusCount === NetworkStatus.fetchMore ? (
@@ -143,7 +143,7 @@ const BouqCatalog: ({
               >
                 {dataMaxPrice && (
                   <RangeInput
-                    title="Max. price"
+                    title="Макс. ціна"
                     min={PRICE_STEP}
                     max={maxPrice!}
                     step={PRICE_STEP}
@@ -171,14 +171,14 @@ const BouqCatalog: ({
                     code={item?.code!}
                     id={item?.id!}
                     photo={item?.image!}
-                    measure={"$"}
+                    measure={"грн."}
                     link={router.pathname}
                     description={item?.description!}
                     basketStatus={item?.basketStatus!}
                   />
                 ))
               ) : (
-                <div className={s.emptyData}>There are no such bouquets</div>
+                <div className={s.emptyData}>Немає таких букетів</div>
               )}
             </Row>
             <PaginationFC

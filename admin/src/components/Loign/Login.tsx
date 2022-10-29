@@ -18,7 +18,7 @@ const Login: React.FC<LoginPropsType> = ({ password, setPassword }) => {
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Control
               type="password"
-              placeholder="Enter password"
+              placeholder="Введіть пароль"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

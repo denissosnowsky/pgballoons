@@ -13,13 +13,13 @@ const Price: () => JSX.Element | void = () => {
 
   if (error) {
     console.log(error);
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
 
   return (
-    <NavBar title="Price">
+    <NavBar title="Ціни">
       <ContentLayout>
-        {data===undefined ? <Loading /> : <List data={arrayConvertor(data.assortment)} measure={"$"} />}
+        {data===undefined ? <Loading /> : <List data={arrayConvertor(data.assortment)} measure={"грн."} />}
       </ContentLayout>
     </NavBar>
   );

@@ -53,7 +53,7 @@ const CategoriesPage: React.FC<CategoriesPagePropsType> = ({}) => {
         ? errorDeleteCategories
         : errorAddCategories
     );
-    showError("Error. Reload the page!");
+    showError("Помилка. Перезагрузіть сторінку!");
     return;
   }
 
@@ -90,10 +90,10 @@ const CategoriesPage: React.FC<CategoriesPagePropsType> = ({}) => {
                               id: i.id!,
                             },
                           });
-                          showSuccess("Category successfully removed");
+                          showSuccess("Категорія успішно видалена");
                         }}
                       >
-                        Delete
+                        Видалити
                       </Button>
                     </span>
                   </ListGroup.Item>
@@ -102,7 +102,7 @@ const CategoriesPage: React.FC<CategoriesPagePropsType> = ({}) => {
             : null)}
         <div className="w-100 d-flex justify-content-center mt-2 mb-3">
           <Button variant="success" onClick={() => setIsShowed(true)}>
-            <i className="bi bi-plus-circle"></i> Add
+            <i className="bi bi-plus-circle"></i> Додати
           </Button>
         </div>
       </ListGroup>

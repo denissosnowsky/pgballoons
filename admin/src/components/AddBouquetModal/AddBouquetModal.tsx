@@ -47,13 +47,13 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
   };
 
   const handleAddProduct = () => {
-    if (!name1) return showError("Enter Name 1");
-    if (!name2) return showError("Enter Name 2");
-    if (!price) return showError("Enter Price");
-    if (!desc) return showError("Enter Composition");
-    if (!code) return showError("Enter Code");
-    if (!personType) return showError("Choose the type of person");
-    if (!photo) return showError("Upload Photo");
+    if (!name1) return showError("Введіть перше ім'я");
+    if (!name2) return showError("Введіть друге ім'я");
+    if (!price) return showError("Введіть ціну");
+    if (!desc) return showError("Введіть опис");
+    if (!code) return showError("Введіть артикул");
+    if (!personType) return showError("Виберіть тип клієнти");
+    if (!photo) return showError("Загрузіть фото");
     const args: AddBouquetMutationVariables = {
       name: name1!,
       subname: name2!,
@@ -65,7 +65,7 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
     };
     addMutation(args);
     setShow(false);
-    showSuccess('Bouquet successfully added');
+    showSuccess('Букет успішно доданий');
   };
 
   return (
@@ -78,19 +78,19 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add Bouquet
+        Додати букет
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form className="px-5">
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextName1">
             <Form.Label column sm="2">
-              Name 1:
+            Перше ім'я:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Name 1"
+                placeholder="Перше ім'я"
                 value={name1}
                 onChange={(e) => setName1(e.target.value)}
               />
@@ -98,12 +98,12 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextName2">
             <Form.Label column sm="2">
-            Name 2:
+            Друге ім'я:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Name 2"
+                placeholder="Друге ім'я"
                 value={name2}
                 onChange={(e) => setName2(e.target.value)}
               />
@@ -111,12 +111,12 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-              Price:
+              Ціна:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter Price"
+                placeholder="Введіть ціну"
                 value={price}
                 onChange={(e) =>
                   setPrice(e.target.value ? +e.target.value : undefined)
@@ -126,12 +126,12 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextDesc">
             <Form.Label column sm="2">
-              Composition:
+              Опис:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 as="textarea"
-                placeholder="Enter Composition"
+                placeholder="Введіть опис"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
               />
@@ -139,12 +139,12 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextCode">
             <Form.Label column sm="2">
-              Code:
+              Артикул:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter Code"
+                placeholder="Введіть артикул"
                 value={code}
                 onChange={(e) =>
                   setCode(e.target.value ? +e.target.value : undefined)
@@ -162,14 +162,14 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
               value={personType}
               onChange={(e) => setPersonType(e.target.value as Person)}
             >
-              <option>Choose the type of person...</option>
-                  <option value={'MAN'}>Men</option>
-                  <option value={'WOMAN'}>Women</option>
-                  <option value={'CHILD'}>Children</option>
+              <option>Виберіть тип клієнта...</option>
+                  <option value={'MAN'}>Чоловік</option>
+                  <option value={'WOMAN'}>Жінка</option>
+                  <option value={'CHILD'}>Діти</option>
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Upload photo:</Form.Label>
+            <Form.Label>Загрузіть фото:</Form.Label>
             <Form.Control type="file" className="mx-3" onChange={handlePhoto} />
           </Form.Group>
           {preload ? (
@@ -187,7 +187,7 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
@@ -196,7 +196,7 @@ const AddBouquetModal: React.FC<AddBalloonModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleAddProduct}
             >
-              Add
+              Додати
             </Button>
           </Col>
         </Row>

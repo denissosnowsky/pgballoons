@@ -6,9 +6,9 @@ import s from "../styles/Page404.module.css";
 
 const Page404: NextPage = () => {
     return(
-        <NavBar title="Not Found 404">
+        <NavBar title="Не знайдено 404">
         <ContentLayout>
-            <div className={s.errorMsg}>Not Found | 404</div>
+            <div className={s.errorMsg}>Не знайдено | 404</div>
         </ContentLayout>
       </NavBar>
     )

@@ -9,7 +9,7 @@ interface ErrorPagePropsType {
 const ErrorPage: React.FC<ErrorPagePropsType> = () => {
     return(
         <>
-        <div className={s.errorMsg}>Not Found | 404</div>
+        <div className={s.errorMsg}>Не знайдено | 404</div>
         </>
     )
 };

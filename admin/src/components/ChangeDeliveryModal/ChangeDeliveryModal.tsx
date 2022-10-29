@@ -29,7 +29,7 @@ const ChangeDeliveryModal: React.FC<ChangeDeliveryModalPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!price) return showError("Enter Price");
+    if (!price) return showError("Введіть ціну");
 
     const args: ChangeDeliveryPriceMutationVariables = {
       price: price!,
@@ -37,7 +37,7 @@ const ChangeDeliveryModal: React.FC<ChangeDeliveryModalPropsType> = ({
     };
     addMutation(args);
     setShow(false);
-    showSuccess('Price successfully changed');
+    showSuccess('Ціна успішно додана');
   };
 
   return (
@@ -50,19 +50,19 @@ const ChangeDeliveryModal: React.FC<ChangeDeliveryModalPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Change delivery price
+        Змінити ціну доставки
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-              New price:
+              Нова ціна:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="New price"
+                placeholder="Нова ціна"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -76,12 +76,12 @@ const ChangeDeliveryModal: React.FC<ChangeDeliveryModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
             <Button variant="success" className="my-2 w-75" onClick={handleAdd}>
-              Save
+              Зберегти
             </Button>
           </Col>
         </Row>

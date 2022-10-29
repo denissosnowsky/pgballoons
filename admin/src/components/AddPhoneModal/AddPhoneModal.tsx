@@ -27,14 +27,14 @@ const AddPhoneModal: React.FC<AddPhoneModalPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!phone) return showError("Enter Category Name");
+    if (!phone) return showError("Введіть телефон");
 
     const args: AddPhoneMutationVariables = {
       number: phone!,
     };
     addMutation(args);
     setShow(false);
-    showSuccess('Phone successfully added');
+    showSuccess('Телефон упсішно доданий');
   };
 
   return (
@@ -47,19 +47,19 @@ const AddPhoneModal: React.FC<AddPhoneModalPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add phone
+        Додати телефон
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Phone number (xxxxxxxxxx):
+            Номер телефону (xxxxxxxxxx):
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Phone number"
+                placeholder="Номер телефону"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
@@ -73,12 +73,12 @@ const AddPhoneModal: React.FC<AddPhoneModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
             <Button variant="success" className="my-2 w-75" onClick={handleAdd}>
-            Save
+            Зберегти
             </Button>
           </Col>
         </Row>

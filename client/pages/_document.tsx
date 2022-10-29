@@ -41,7 +41,7 @@ class MyDocument extends Document<DocumentProps> {
           <meta charSet="utf-8" />
           <meta
             name="keywords"
-            content="balloons, helium balloons, balloons buy, balloons online"
+            content="кульки, гелієві кульки, купити кульки, букети кульок"
           />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />

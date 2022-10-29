@@ -15,7 +15,7 @@ const DropdownBtn: React.FC<DropdownBtnProps> = ({ title, items, externalClb, em
   const [chosen, setChosen] = useState<string>(title);
 
   const handleAllBtn = () => {
-    setChosen("Select a category | All");
+    setChosen("Виберіть категрію | Всі");
     externalClb && externalClb(undefined);
   };
 
@@ -25,7 +25,7 @@ const DropdownBtn: React.FC<DropdownBtnProps> = ({ title, items, externalClb, em
   };
 
   useEffect(()=>{
-    emptify && setChosen("Select a category | All");
+    emptify && setChosen("Виберіть категрію | Всі");
   }, [emptify]);
 
   return (
@@ -35,7 +35,7 @@ const DropdownBtn: React.FC<DropdownBtnProps> = ({ title, items, externalClb, em
       variant="outline-primary"
       className={s.btn}
     >
-      <Dropdown.Item onClick={handleAllBtn}>{"All"}</Dropdown.Item>
+      <Dropdown.Item onClick={handleAllBtn}>{"Всі"}</Dropdown.Item>
       {items &&
         items.length > 0 &&
         items.map((item) => (

@@ -26,7 +26,7 @@ const SearchInput: React.FC<SearchInputPropsType> = ({ externalClb, emptify }) =
   return (
     <InputGroup className="mb-3">
       <FormControl
-        placeholder="Search a product by code"
+        placeholder="Знайти продукт через артикул"
         aria-label="Search a product by code"
         aria-describedby="basic-addon2"
         value={input}
@@ -39,7 +39,7 @@ const SearchInput: React.FC<SearchInputPropsType> = ({ externalClb, emptify }) =
         id="button-addon2"
         onClick={handleSearch}
       >
-        Search
+        Шукати
       </Button>
     </InputGroup>
   );

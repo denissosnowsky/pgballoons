@@ -3,10 +3,10 @@ export const formatNumber = (number: string) => {
   let splitedNum = number.split("");
   for (let i = 0; i < splitedNum.length; i++) {
     switch (i) {
-      case 0:
+      case 3:
         arr.push(`(${splitedNum[i]}`);
         break;
-      case 2:
+      case 5:
         arr.push(`${splitedNum[i]})`);
         break;
       default:

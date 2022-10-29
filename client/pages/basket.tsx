@@ -26,11 +26,11 @@ const Basket: NextPage = () => {
     onCompleted(data) {
       console.log(data.sendOrder);
       data.sendOrder
-        ? showSuccess("The order has been sent! Our manager will contact you")
-        : showError("Error. The order has not been sent!");
+        ? showSuccess("Замовлення прийнято! Наш менеджер сконтактує з Вами")
+        : showError("Помилка. Замовлення не прийнято!");
     },
     onError(error) {
-      showError("Error. The order has not been sent!");
+      showError("Помилка. Замовлення не прийнято!");
       console.log(error);
     },
   });
@@ -71,13 +71,12 @@ const Basket: NextPage = () => {
   );
 
   const handleOrder = () => {
-    if (!state.name) return showError("Enter your name");
-    if (!state.phone) return showError("Enter your phone");
-    if (!state.email) return showError("Enter your e-mail");
-    if (!state.address) return showError("Enter your address");
-    if (!state.code) return showError("Enter your code");
-    if (!state.date) return showError("Enter the date");
-    if (!state.time) return showError("Enter the time");
+    if (!state.name) return showError("Ваше ім'я");
+    if (!state.phone) return showError("Ваш телефон");
+    if (!state.email) return showError("Ваш e-mail");
+    if (!state.address) return showError("Ваша адреса");
+    if (!state.date) return showError("Дата");
+    if (!state.time) return showError("Час");
     sendOrder({
       variables: {
         order: JSON.stringify(completeOrder),
@@ -89,7 +88,7 @@ const Basket: NextPage = () => {
   };
 
   return (
-    <NavBar title="Cart">
+    <NavBar title="Кошик">
       <ContentLayout>
         {loading ? (
           <Loading />
@@ -98,7 +97,7 @@ const Basket: NextPage = () => {
           {convertedBasket &&
             (convertedBasket.length > 0 ? (
               <>
-                <ListWithCounterAndPhoto measure={"$"} data={convertedBasket} />
+                <ListWithCounterAndPhoto measure={"грн."} data={convertedBasket} />
                 <Form
                   className={cs(
                     [s.form],
@@ -107,16 +106,16 @@ const Basket: NextPage = () => {
                     "flex-column"
                   )}
                 >
-                  <div className={s.header}>Application for deliveries:</div>
+                  <div className={s.header}>Замовлення:</div>
                   <FloatingLabel
                     controlId="name"
-                    label="Enter your name"
+                    label="Введіть ім'я"
                     className="mb-3"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder="Введіть ім'я"
                       name="name"
                       value={state.name}
                       onChange={handleInputs}
@@ -124,13 +123,13 @@ const Basket: NextPage = () => {
                   </FloatingLabel>
                   <FloatingLabel
                     controlId="phone"
-                    label="Enter your phone"
+                    label="Введіть телефон"
                     className="mb-3"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="text"
-                      placeholder="Enter your phone"
+                      placeholder="Введіть телефон"
                       name="phone"
                       value={state.phone}
                       onChange={handleInputs}
@@ -138,13 +137,13 @@ const Basket: NextPage = () => {
                   </FloatingLabel>
                   <FloatingLabel
                     controlId="text"
-                    label="Enter your e-mail"
+                    label="Введіть e-mail"
                     className="mb-3"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="text"
-                      placeholder="Enter your e-mail"
+                      placeholder="Введіть e-mail"
                       name="email"
                       value={state.email}
                       onChange={handleInputs}
@@ -152,41 +151,27 @@ const Basket: NextPage = () => {
                   </FloatingLabel>
                   <FloatingLabel
                     controlId="address"
-                    label="Enter your address"
+                    label="Введіть адресу"
                     className="mb-3"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="text"
-                      placeholder="Enter your address"
+                      placeholder="Введіть адресу"
                       name="address"
                       value={state.address}
                       onChange={handleInputs}
                     />
                   </FloatingLabel>
                   <FloatingLabel
-                    controlId="ZIP code"
-                    label="Enter your ZIP code"
-                    className="mb-3"
-                    style={{ width: "100%" }}
-                  >
-                    <Form.Control
-                      type="number"
-                      placeholder="Enter your ZIP code"
-                      name="code"
-                      value={state.code}
-                      onChange={handleInputs}
-                    />
-                  </FloatingLabel>
-                  <FloatingLabel
                     controlId="date"
-                    label="Enter the date"
+                    label="Введіть дату"
                     className="mb-3"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="date"
-                      placeholder="Enter the date"
+                      placeholder="Введіть дату"
                       name="date"
                       value={state.date}
                       onChange={handleInputs}
@@ -194,32 +179,31 @@ const Basket: NextPage = () => {
                   </FloatingLabel>
                   <FloatingLabel
                     controlId="time"
-                    label="Enter the time"
+                    label="Введіть час"
                     style={{ width: "100%" }}
                   >
                     <Form.Control
                       type="time"
-                      placeholder="Enter the time"
+                      placeholder="Введіть час"
                       name="time"
                       value={state.time}
                       onChange={handleInputs}
                     />
                   </FloatingLabel>
-                  {/* <div className={s.attention}>
-                    *Указаное время может быть занято, менеджер уточнит во время
-                    звонка
-                  </div> */}
+                  <div className={s.attention}>
+                    *Вказаний час може бути зайнятим. Менеджер сконтактує з Вами
+                  </div>
                   <Button
                     variant="primary"
                     className={s.submitBtn}
                     onClick={handleOrder}
                   >
-                    Confirm the order
+                    Підтвердити замовлення
                   </Button>
                 </Form>
               </>
             ) : (
-              <div className={s.emptyBaskettext}>Cart is empty</div>
+              <div className={s.emptyBaskettext}>Кошик пустий</div>
             ))}
         </>
         )}

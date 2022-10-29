@@ -129,7 +129,7 @@ const BouquetsPage: React.FC<BouquetsPagePropsType> = () => {
         ? errorChangePrices
         : errorChangeBouquets
     );
-    showError("Error. Reload the page!");
+    showError("Помилка. Перезагрузіть сторінку!");
     return;
   }
 
@@ -171,7 +171,7 @@ const BouquetsPage: React.FC<BouquetsPagePropsType> = () => {
               variant="success"
               onClick={() => setAddModalShowed(true)}
             >
-              <i className="bi bi-plus-circle"></i> Add Product
+              <i className="bi bi-plus-circle"></i> Додати продукт
             </Button>
           </Col>
         </Row>
@@ -185,7 +185,7 @@ const BouquetsPage: React.FC<BouquetsPagePropsType> = () => {
               className={s.btnRight}
               onClick={() => setChangePricesShowed(true)}
             >
-              Change many prices
+              Змінити багато цін
             </Button>
           </Col>
         </Row>
@@ -219,7 +219,7 @@ const BouquetsPage: React.FC<BouquetsPagePropsType> = () => {
                       deleteCard({
                         variables: { id: item?.id! },
                       });
-                      showSuccess("Bouquet successfully deleted");
+                      showSuccess("Букет успішно видалений");
                     }}
                     addMutation={(args) =>
                       changeBouquets({
@@ -237,7 +237,7 @@ const BouquetsPage: React.FC<BouquetsPagePropsType> = () => {
               />
             </>
           ) : (
-            <div className={s.empty}>There are no such bouquets</div>
+            <div className={s.empty}>Немає таких букетів</div>
           )}
         </>
       )}

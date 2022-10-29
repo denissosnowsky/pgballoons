@@ -39,14 +39,14 @@ const NavBar = ({
   if (errorPhone || errorSocial) {
     console.log(errorPhone);
     console.log(errorSocial);
-    showError("Error. Please, reload the page");
+    showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
   console.log("navbar: \n" + JSON.stringify(dataPhone));
   console.log("navbar: \n" + JSON.stringify(dataSocial));
   return (
     <>
       <Head>
-        <title>{title} | PG Balloons</title>
+        <title>{title} | Old vinyl</title>
       </Head>
       <div>
         <div className={cs([s.black, pushMobileMenu && s.showBlack])}></div>

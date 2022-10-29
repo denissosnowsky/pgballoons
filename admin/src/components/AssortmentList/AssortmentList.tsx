@@ -37,7 +37,7 @@ const AssortmentList: React.FC<AssortmentListPropsType> = ({
     }
     changeMutation(args);
     setChange(false);
-    showSuccess('Category successfully changed');
+    showSuccess('Асортимент успішно доданий');
   };
 
   return (
@@ -55,23 +55,23 @@ const AssortmentList: React.FC<AssortmentListPropsType> = ({
                   }}
                   className="me-2"
                 >
-                  Change
+                  Змінити
                 </Button>
                 <Button
                   variant="danger"
                   onClick={() => deleteMutation({ id: data.id })}
                 >
-                  Delete
+                  Видалити
                 </Button>
               </div>
             </div>
             <div>
               <span>
-                Price: {data.price} {"$"}
+                Ціна: {data.price} {"грн."}
               </span>
             </div>
             <div>
-              <span>Fixed: {data.fixed ? "yes" : "no"}</span>
+              <span>Фіксована: {data.fixed ? "так" : "ні"}</span>
             </div>
           </div>
         </ListGroup.Item>
@@ -80,7 +80,7 @@ const AssortmentList: React.FC<AssortmentListPropsType> = ({
           <div>
             <div className={s.listWrapper2}>
               <span>
-                Name:{" "}
+              Ім'я:{" "}
                 <input value={name} onChange={(e) => setName(e.target.value)} />
               </span>
               <div>
@@ -89,30 +89,30 @@ const AssortmentList: React.FC<AssortmentListPropsType> = ({
                   onClick={handleChange}
                   className="me-2"
                 >
-                  Save
+                  Зберегти
                 </Button>
                 <Button variant="danger" onClick={() => setChange(false)}>
-                Cancel
+                Відмінити
                 </Button>
               </div>
             </div>
             <div className='mb-2'>
               <span>
-                Price:{" "}
+                Ціна:{" "}
                 <input
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />{" "}
-                {"$"}
+                {"грн."}
               </span>
             </div>
             <div>
               <span>
-                Fixed:{" "}
+                Фіксована:{" "}
                 <select value={fixed} onChange={(e) => setFixed(e.target.value)}>
-                  <option>Choose fixity...</option>
-                  <option value={"true"}>Fixed</option>
-                  <option value={"false"}>Not Fixed</option>
+                  <option>Виберіть чи фіксована ціна...</option>
+                  <option value={"true"}>Фіксована</option>
+                  <option value={"false"}>Не фіксована</option>
                 </select>
               </span>
             </div>

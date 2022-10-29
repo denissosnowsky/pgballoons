@@ -33,7 +33,7 @@ const DeliveryPage: React.FC<DeliveryPagePropsType> = () => {
 
   if (errorPrice || errorChangePrice) {
     console.log(errorPrice ? errorPrice : errorChangePrice);
-    showError('Error. Reload the page!');
+    showError('Помилка. Перезагрузіть сторінку!');
     return;
   }
 
@@ -54,11 +54,11 @@ const DeliveryPage: React.FC<DeliveryPagePropsType> = () => {
         />
       )}
       <div className={s.wrapper}>
-        <div className={s.text}>Current delivery price:</div>
+        <div className={s.text}>Поточна ціна доставки:</div>
         <div className={s.price}>{dataPrice.deliveryPrice.price} $</div>
       </div>
       <div className={s.btn}>
-          <Button variant='success' className='w-50' onClick={()=>setIsShowed(true)}>Change delivery price</Button>
+          <Button variant='success' className='w-50' onClick={()=>setIsShowed(true)}>Змінити ціну доставки</Button>
       </div>
     </>
   );

@@ -23,7 +23,7 @@ const Contacts: () => JSX.Element | void = () => {
   if (errorPhone || errorSocial) {
     console.log(errorPhone);
     console.log(errorSocial);
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
   if (loadingPhone || loadingSocial) return <Loading />;
 
@@ -31,7 +31,7 @@ const Contacts: () => JSX.Element | void = () => {
   console.log("page: \n" + JSON.stringify(dataSocial));
 
   return (
-    <NavBar title="Contacts">
+    <NavBar title="Контакти">
       <ContentLayout>
         <>
           <Row>

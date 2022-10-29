@@ -28,8 +28,8 @@ const AddColorModal: React.FC<AddColorPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!name) return showError("Enter Color Name");
-    if (!cssName) return showError("Enter Color Code");
+    if (!name) return showError("Введіть ім'я кольору");
+    if (!cssName) return showError("Введіть код кольору");
 
     const args: AddColorMutationVariables = {
       name: name!,
@@ -38,7 +38,7 @@ const AddColorModal: React.FC<AddColorPropsType> = ({
     console.log(args);
     addMutation(args);
     setShow(false);
-    showSuccess('Color successfully added');
+    showSuccess('Колір успішно доданий');
   };
 
   return (
@@ -51,19 +51,19 @@ const AddColorModal: React.FC<AddColorPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add color
+        Додати колір
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Color name:
+            Ім'я кольору:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Color name"
+                placeholder="Ім'я кольору"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -71,12 +71,12 @@ const AddColorModal: React.FC<AddColorPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-            Color code name:
+            Код кольору:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Color code name"
+                placeholder="Код кольору"
                 value={cssName}
                 onChange={(e) => setCssName(e.target.value)}
               />
@@ -90,12 +90,12 @@ const AddColorModal: React.FC<AddColorPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
             <Button variant="success" className="my-2 w-75" onClick={handleAdd}>
-            Save
+            Зберегти
             </Button>
           </Col>
         </Row>

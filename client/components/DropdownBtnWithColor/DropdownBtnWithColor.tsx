@@ -18,7 +18,7 @@ const DropdownBtnWithColor: React.FC<DropdownBtnWithColorProps> = ({
   const [chosen, setChosen] = useState<string>(title);
 
   const handleAllBtn = () => {
-    setChosen("All");
+    setChosen("Всі");
     externalClb && externalClb(undefined);
   };
 
@@ -36,7 +36,7 @@ const DropdownBtnWithColor: React.FC<DropdownBtnWithColorProps> = ({
     >
       <Dropdown.Item onClick={handleAllBtn}>
         <div className={s.color} style={{ display: "none" }}></div>
-        {"All"}
+        {"Всі"}
       </Dropdown.Item>
       {items &&
         (items.length > 0 &&

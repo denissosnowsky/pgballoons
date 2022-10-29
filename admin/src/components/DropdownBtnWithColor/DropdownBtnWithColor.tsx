@@ -20,7 +20,7 @@ const DropdownBtnWithColor: React.FC<DropdownBtnWithColorProps> = ({
   const [chosen, setChosen] = useState<string>(title);
 
   const handleAllBtn = () => {
-    setChosen("Choose a color | All");
+    setChosen("Виберіть колір | Всі");
     externalClb && externalClb(undefined);
   };
 
@@ -30,7 +30,7 @@ const DropdownBtnWithColor: React.FC<DropdownBtnWithColorProps> = ({
   };
 
   useEffect(()=>{
-    emptify && setChosen("Choose a color | All");
+    emptify && setChosen("Виберіть колір | Всі");
   }, [emptify]);
 
   return (
@@ -42,7 +42,7 @@ const DropdownBtnWithColor: React.FC<DropdownBtnWithColorProps> = ({
     >
       <Dropdown.Item onClick={handleAllBtn}>
         <div className={s.color} style={{ display: "none" }}></div>
-        {"Все"}
+        {"Всі"}
       </Dropdown.Item>
       {items &&
         items.length > 0 &&

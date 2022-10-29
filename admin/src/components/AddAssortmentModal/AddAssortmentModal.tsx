@@ -32,9 +32,9 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
   };
 
   const handleAdd = () => {
-    if (!name) return showError("Enter Category Name");
-    if (!price) return showError("Enter Category Price");
-    if (!fixed) return showError("Choose Whether Price Is Fixed");
+    if (!name) return showError("Введіть категорію");
+    if (!price) return showError("Введіть ціну категорії");
+    if (!fixed) return showError("Виберіть чи ціна фіксована");
 
     const args: AddAssortmentMutationVariables = {
       name: name!,
@@ -44,7 +44,7 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
     console.log(args);
     addMutation(args);
     setShow(false);
-    showSuccess('Category successfully added');
+    showSuccess('Категорія успішно додана');
   };
 
   return (
@@ -58,7 +58,7 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
       >
         <Modal.Header>
           <Modal.Title id="example-modal-sizes-title-lg">
-          Add assortment
+          Додати асортимент
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -69,12 +69,12 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
               controlId="formPlaintextPrice"
             >
               <Form.Label column sm="2">
-              Name of category:
+              Ім'я категорії:
               </Form.Label>
               <Col sm="10">
                 <Form.Control
                   type="text"
-                  placeholder="Name of category"
+                  placeholder="Ім'я категорії"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -86,12 +86,12 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
               controlId="formPlaintextPrice"
             >
               <Form.Label column sm="2">
-              Enter the price:
+              Введіть ціну:
               </Form.Label>
               <Col sm="10">
                 <Form.Control
                   type="text"
-                  placeholder="Enter the price"
+                  placeholder="Введіть ціну"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -107,9 +107,9 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
                 value={fixed}
                 onChange={(e) => setFixed(e.target.value)}
               >
-                <option>Select fixity ...</option>
-                <option value={"true"}>Fixed</option>
-                <option value={"false"}>Not fixed</option>
+                <option>Виберіть чи фіксована ціна ...</option>
+                <option value={"true"}>Фіксована</option>
+                <option value={"false"}>Не фіксована</option>
               </Form.Control>
             </Form.Group>
           </Form>
@@ -120,7 +120,7 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
                 className="my-2 w-75"
                 onClick={handleCancel}
               >
-                Cancel
+                Відмінити
               </Button>
             </Col>
             <Col className="d-flex justify-content-center">
@@ -129,7 +129,7 @@ const AddAssortmentModal: React.FC<AddAssortmentModalPropsType> = ({
                 className="my-2 w-75"
                 onClick={handleAdd}
               >
-                Save
+                Зберегти
               </Button>
             </Col>
           </Row>

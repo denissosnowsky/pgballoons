@@ -72,13 +72,13 @@ const ListWithCounterAndPhoto: React.FC<ListWithCounterAndPhotoProps> = ({
             </Col>
           </Row>
           <Row style={{ marginTop: "5px", marginBottom: "5px" }}>
-            <Col>Composition: {i.description}</Col>
+            <Col>Опис: {i.description}</Col>
           </Row>
         </ListGroup.Item>
       ))}
       <ListGroup.Item className={s.li}>
         <Row className={s.sumRow}>
-          <Col xs={6}>TOTAL: </Col>
+          <Col xs={6}>Всього: </Col>
           <Col xs={6} className={s.lastCol}>
             {sum} {measure}
           </Col>

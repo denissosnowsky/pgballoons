@@ -68,7 +68,7 @@ const AssortmentPage: React.FC<AssortmentPagePropsType> = () => {
         ? errorAddAssort
         : errorChangeAssort
     );
-    showError("Error. Reload the page!");
+    showError("Помилка. Перезагрузіть сторінку!");
     return;
   }
 
@@ -104,7 +104,7 @@ const AssortmentPage: React.FC<AssortmentPagePropsType> = () => {
                 deleteAssort({
                   variables: args,
                 });
-                showSuccess("Category successfully removed");
+                showSuccess("Асортимент успішно видалений");
               }}
               changeMutation={(args) =>
                 changeAssort({
@@ -116,7 +116,7 @@ const AssortmentPage: React.FC<AssortmentPagePropsType> = () => {
       </ListGroup>
       <div className="w-100 d-flex justify-content-center mt-2 mb-3">
         <Button variant="success" onClick={() => setIsShowed(true)}>
-          <i className="bi bi-plus-circle"></i> Add
+          <i className="bi bi-plus-circle"></i> Додати
         </Button>
       </div>
     </>

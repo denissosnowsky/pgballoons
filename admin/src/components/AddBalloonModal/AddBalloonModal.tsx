@@ -64,14 +64,14 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
   };
 
   const handleAddProduct = () => {
-    if (!name1) return showError("Enter Name 1");
-    if (!name2) return showError("Enter Name 2");
-    if (!price) return showError("Enter Price");
-    if (!desc) return showError("Enter Composition");
-    if (!code) return showError("Enter Code");
-    if (!cat) return showError("Choose a Category");
-    if (!col) return showError("Choose Color");
-    if (!photo) return showError("Upload Photo");
+    if (!name1) return showError("Введіть перше ім'я");
+    if (!name2) return showError("Введіть друге ім'я");
+    if (!price) return showError("Введіть ціну");
+    if (!desc) return showError("Введіть опис");
+    if (!code) return showError("Введіть артикул");
+    if (!cat) return showError("Виберіть категорію");
+    if (!col) return showError("Виберіть колір");
+    if (!photo) return showError("Загрузіть фото");
     const args: AddBalloonMutationVariables = {
       name: name1!,
       subname: name2!,
@@ -84,7 +84,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
     };
     addMutation(args);
     setShow(false);
-    showSuccess('Balloon successfully added');
+    showSuccess('Кулька успішно додана');
   };
 
   return (
@@ -97,19 +97,19 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
     >
       <Modal.Header>
         <Modal.Title id="example-modal-sizes-title-lg">
-        Add Balloon
+        Додати кульку
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form className="px-5">
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextName1">
             <Form.Label column sm="2">
-            Name 1:
+            Перше ім'я:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Name 1"
+                placeholder="Перше ім'я"
                 value={name1}
                 onChange={(e) => setName1(e.target.value)}
               />
@@ -117,12 +117,12 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextName2">
             <Form.Label column sm="2">
-            Name 2:
+            Друге ім'я:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="text"
-                placeholder="Name 2"
+                placeholder="Друге ім'я"
                 value={name2}
                 onChange={(e) => setName2(e.target.value)}
               />
@@ -130,12 +130,12 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextPrice">
             <Form.Label column sm="2">
-              Price:
+              Ціна:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter Price"
+                placeholder="Введіть ціну"
                 value={price}
                 onChange={(e) =>
                   setPrice(e.target.value ? +e.target.value : undefined)
@@ -145,12 +145,12 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextDesc">
             <Form.Label column sm="2">
-              Composition:
+              Опис:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 as="textarea"
-                placeholder="Enter Composition"
+                placeholder="Введіть опис"
                 value={desc}
                 onChange={(e) => setDesc(e.target.value)}
               />
@@ -158,12 +158,12 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextCode">
             <Form.Label column sm="2">
-              Code:
+              Артикул:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 type="number"
-                placeholder="Enter Code"
+                placeholder="Введіть артикул"
                 value={code}
                 onChange={(e) =>
                   setCode(e.target.value ? +e.target.value : undefined)
@@ -181,7 +181,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
               value={cat}
               onChange={(e) => setCat(e.target.value)}
             >
-              <option>Select a category...</option>
+              <option>Виберіть категорію...</option>
               {categories &&
                 categories.map((obj) => (
                   <option value={obj?.id!}>{obj?.name}</option>
@@ -198,7 +198,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
               value={col}
               onChange={(e) => setCol(e.target.value)}
             >
-              <option>Select a color...</option>
+              <option>Виберіть колір...</option>
               {colors &&
                 colors.map((obj) => (
                   <option value={obj?.id!}>{obj?.name}</option>
@@ -206,7 +206,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
             </Form.Control>
           </Form.Group>
           <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Upload photo:</Form.Label>
+            <Form.Label>Загрузіть фото:</Form.Label>
             <Form.Control type="file" className="mx-3" onChange={handlePhoto} />
           </Form.Group>
           {preload ? (
@@ -224,7 +224,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleCancel}
             >
-              Cancel
+              Відмінити
             </Button>
           </Col>
           <Col className="d-flex justify-content-center">
@@ -233,7 +233,7 @@ const AddBalloonModal: React.FC<AddBalloonModalPropsType> = ({
               className="my-2 w-75"
               onClick={handleAddProduct}
             >
-              Add
+              Додати
             </Button>
           </Col>
         </Row>

@@ -122,13 +122,13 @@ const AtomCatalog: ({
   const categoryInitName = useMemo(() => {
     return dataCategory?.categories?.find((o) => o?.id === category)?.name
       ? dataCategory?.categories?.find((o) => o?.id === category)?.name
-      : "Select a category | All";
+      : "Категорії | Всі";
   }, []);
 
   const colorInitName = useMemo(() => {
     return dataColor?.colors?.find((o) => o?.id === color)?.name
       ? dataColor?.colors?.find((o) => o?.id === color)?.name
-      : "Select a color | All";
+      : "Кольори | Всі";
   }, []);
 
   useEffect(() => {
@@ -187,7 +187,7 @@ const AtomCatalog: ({
         ? errorColor
         : errorMaxPrice
     );
-    return showError("Error. Please, reload the page");
+    return showError("Помилка. Будь ласка, перезагрузіть сторінку");
   }
 
   const maxPrice =
@@ -198,7 +198,7 @@ const AtomCatalog: ({
         (PRICE_STEP - (dataMaxPrice?.maxBalloonPrice! % PRICE_STEP)));
 
   return (
-    <NavBar title="Balloons">
+    <NavBar title="Скласти букет">
       <ContentLayout>
         <>
           <Row>
@@ -220,7 +220,7 @@ const AtomCatalog: ({
             >
               {dataMaxPrice && (
                 <RangeInput
-                  title="Max. price"
+                  title="Макс. ціна"
                   min={PRICE_STEP}
                   max={maxPrice!}
                   step={PRICE_STEP}
@@ -259,14 +259,14 @@ const AtomCatalog: ({
                       code={item?.code!}
                       id={item?.id!}
                       photo={item?.image!}
-                      measure={"$"}
+                      measure={"грн."}
                       link={router.pathname}
                       description={item?.description!}
                       basketStatus={item?.basketStatus!}
                     />
                   ))
                 ) : (
-                  <div className={s.emptyData}>There are no such balloons</div>
+                  <div className={s.emptyData}>Немає таких кульок</div>
                 )}
               </Row>
               <PaginationFC

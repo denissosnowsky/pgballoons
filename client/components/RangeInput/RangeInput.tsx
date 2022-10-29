@@ -40,7 +40,7 @@ function RangeInput({ min, max, step, title, start, externalClb}: RangeInputProp
           onChange={handlePrice}
           onMouseUp={handleMouseUp}
         />
-        <div className="ms-1">0 - {price} $</div>
+        <div className="ms-1">0 - {price} грн.</div>
       </div>
     );
   };
